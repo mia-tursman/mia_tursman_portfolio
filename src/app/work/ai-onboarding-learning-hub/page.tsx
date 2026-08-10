@@ -131,30 +131,54 @@ export default function AiOnboardingLearningHubPage() {
             how to fit this learning into their incredibly busy schedules.
             This created a few specific issues:
           </p>
-          <ul className={listClass}>
-            <li className={liClass}>
-              No way to ask a clarifying question without interrupting a
-              coworker
-            </li>
-            <li className={liClass}>
-              No visibility into which parts of onboarding were actually
-              confusing people
-            </li>
-            <li className={liClass}>
-              No clear guidance or visual elements to aid with learning AI in
-              the workplace
-            </li>
-            <li className={liClass}>
-              People are busy with their jobs and are unsure of where to
-              begin learning Claude
-            </li>
-          </ul>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {[
+              "No way to ask a clarifying question without interrupting a coworker",
+              "No visibility into which parts of onboarding were actually confusing people",
+              "No clear guidance or visual elements to aid with learning AI in the workplace",
+              "People are busy with their jobs and are unsure of where to begin learning Claude",
+            ].map((issue) => (
+              <div
+                key={issue}
+                className="flex gap-3 rounded-2xl bg-sand-light p-5 shadow-inner shadow-olive/5"
+              >
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="mt-0.5 h-5 w-5 shrink-0 text-rust-text"
+                >
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" />
+                  <path
+                    d="M12 7.5v5.5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
+                  <circle cx="12" cy="16.25" r="1" fill="currentColor" />
+                </svg>
+                <p className="text-sm leading-relaxed text-olive-soft">
+                  {issue}
+                </p>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="flex flex-col gap-4">
           <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
             Research
           </h2>
+          <div className="flex flex-col items-start gap-2 rounded-3xl bg-sand-light px-6 py-5 shadow-inner shadow-olive/5 sm:w-fit">
+            <span className="font-serif text-5xl font-medium tracking-tight text-rust-text sm:text-6xl">
+              16
+            </span>
+            <span className="max-w-xs text-sm leading-snug text-olive-soft">
+              discovery interviews across Commercial, Development, Finance,
+              Legal, and Operations
+            </span>
+          </div>
+
           <p className="leading-relaxed text-olive-soft">
             To understand the real pain points across this company before
             designing a solution, I conducted 16 semi-structured discovery
@@ -170,10 +194,12 @@ export default function AiOnboardingLearningHubPage() {
             This wasn&rsquo;t just a training gap — it was a mismatch between
             the pace of the tool rollout and the support employees needed to
             actually use it. As Stephanie, our HR lead, described it,
+          </p>
+          <blockquote className="border-l-4 border-lilac bg-lilac-tint py-4 pr-6 pl-6 text-lg leading-relaxed text-olive italic">
             &ldquo;Just tell AI to do it&rdquo; had become a common phrase
             among the AI-forward team members, but there was no roadmap and
             no one accountable for making it work.
-          </p>
+          </blockquote>
           <p className="leading-relaxed text-olive-soft">
             This finding reframed the problem for me: the issue wasn&rsquo;t
             that Claude was hard to use — I learned the essentials within my
@@ -200,43 +226,48 @@ export default function AiOnboardingLearningHubPage() {
 
           <ImagePlaceholder alt="Photo of rough early sketches and planning notes for the Learning Hub" />
 
-          <ul className={listClass}>
-            <li className={liClass}>
-              <strong className="text-olive">
-                Step-by-step over document dump:
-              </strong>{" "}
-              Given the research finding that employees didn&rsquo;t lack the
-              ability to learn Claude, just the structure to fit it into
-              their schedule, I designed the hub as a guided sequence rather
-              than a long reference document. This layout provided
-              instructions on what to do next, rather than a large dump of
-              knowledge with no clear roadmap.
-            </li>
-            <li className={liClass}>
-              <strong className="text-olive">An interactive chatbot:</strong>{" "}
-              Since the research showed people had no easy way to ask a
-              clarifying question without pulling a coworker away from their
-              own work, I added a running chatbot to work as the main
-              mechanism for surfacing confusion in real time.
-            </li>
-            <li className={liClass}>
-              <strong className="text-olive">Building visibility:</strong> I
-              decided to back the chatbot with Airtable, creating a database
-              that collected the major themes users asked the chatbot about.
-              This design decision allows the research and AI team to truly
-              understand where there are learning disconnects.
-            </li>
-            <li className={liClass}>
-              <strong className="text-olive">
-                Examples make abstractions concrete:
-              </strong>{" "}
-              Rather than just describing Claude tools conceptually, I added
-              concrete examples of what TKN teams were actually using them
-              for — a small change, but it turned an abstract &ldquo;here&rsquo;s
-              a tool&rdquo; into &ldquo;here&rsquo;s how someone on your team
-              already uses it.&rdquo;
-            </li>
-          </ul>
+          <div className="flex flex-col gap-4 rounded-3xl border border-olive/10 bg-sand-light p-6">
+            <span className="text-xs font-medium tracking-wide text-rust-text uppercase">
+              Decisions I made
+            </span>
+            <ul className={listClass}>
+              <li className={liClass}>
+                <strong className="text-olive">
+                  Step-by-step over document dump:
+                </strong>{" "}
+                Given the research finding that employees didn&rsquo;t lack the
+                ability to learn Claude, just the structure to fit it into
+                their schedule, I designed the hub as a guided sequence rather
+                than a long reference document. This layout provided
+                instructions on what to do next, rather than a large dump of
+                knowledge with no clear roadmap.
+              </li>
+              <li className={liClass}>
+                <strong className="text-olive">An interactive chatbot:</strong>{" "}
+                Since the research showed people had no easy way to ask a
+                clarifying question without pulling a coworker away from their
+                own work, I added a running chatbot to work as the main
+                mechanism for surfacing confusion in real time.
+              </li>
+              <li className={liClass}>
+                <strong className="text-olive">Building visibility:</strong> I
+                decided to back the chatbot with Airtable, creating a database
+                that collected the major themes users asked the chatbot about.
+                This design decision allows the research and AI team to truly
+                understand where there are learning disconnects.
+              </li>
+              <li className={liClass}>
+                <strong className="text-olive">
+                  Examples make abstractions concrete:
+                </strong>{" "}
+                Rather than just describing Claude tools conceptually, I added
+                concrete examples of what TKN teams were actually using them
+                for — a small change, but it turned an abstract &ldquo;here&rsquo;s
+                a tool&rdquo; into &ldquo;here&rsquo;s how someone on your team
+                already uses it.&rdquo;
+              </li>
+            </ul>
+          </div>
 
           <ImagePlaceholder alt="Screenshot of the Airtable table logging FAQ themes and questions collected from the chatbot" />
 
@@ -248,29 +279,35 @@ export default function AiOnboardingLearningHubPage() {
             feedback. This process surfaced several structural gaps I
             hadn&rsquo;t caught on my own:
           </p>
-          <ul className={listClass}>
-            <li className={liClass}>
-              <strong className="text-olive">
-                A responsive layout bug:
-              </strong>{" "}
-              Camden Brown (Chief Development Officer) pointed out that the
-              site wasn&rsquo;t adapting properly to wide screens —
-              something I&rsquo;d missed while focused on optimizing for
-              smaller screens. It was a good check on my own blind spot:
-              I&rsquo;d been testing on one end of the responsive spectrum
-              and assumed the other end was fine.
-            </li>
-            <li className={liClass}>
-              <strong className="text-olive">
-                Skills needed grouping, not just listing:
-              </strong>{" "}
-              Camden pointed out that company skills should be organized by
-              software (PowerPoint vs. Word vs. Outlook, etc.) rather than
-              as a flat list — which pushed me to think about tagging or
-              subgrouping as a way to make the hub organized and
-              understandable.
-            </li>
-          </ul>
+
+          <div className="flex flex-col gap-4 rounded-3xl border border-dashed border-lilac/50 bg-lilac-tint p-6">
+            <span className="text-xs font-medium tracking-wide text-lilac uppercase">
+              Feedback I received
+            </span>
+            <ul className={listClass}>
+              <li className={liClass}>
+                <strong className="text-olive">
+                  A responsive layout bug:
+                </strong>{" "}
+                Camden Brown (Chief Development Officer) pointed out that the
+                site wasn&rsquo;t adapting properly to wide screens —
+                something I&rsquo;d missed while focused on optimizing for
+                smaller screens. It was a good check on my own blind spot:
+                I&rsquo;d been testing on one end of the responsive spectrum
+                and assumed the other end was fine.
+              </li>
+              <li className={liClass}>
+                <strong className="text-olive">
+                  Skills needed grouping, not just listing:
+                </strong>{" "}
+                Camden pointed out that company skills should be organized by
+                software (PowerPoint vs. Word vs. Outlook, etc.) rather than
+                as a flat list — which pushed me to think about tagging or
+                subgrouping as a way to make the hub organized and
+                understandable.
+              </li>
+            </ul>
+          </div>
 
           <p className="leading-relaxed text-olive-soft">
             Through this design process, I also ran into an encoding issue
@@ -298,7 +335,7 @@ export default function AiOnboardingLearningHubPage() {
           </p>
         </section>
 
-        <section className="flex flex-col gap-4">
+        <section className="flex flex-col gap-8">
           <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
             What I Learned
           </h2>
@@ -321,7 +358,10 @@ export default function AiOnboardingLearningHubPage() {
             live, but logging every question meant it kept generating its
             own research after launch, which reframed the project less as a
             one-time deliverable and more as a system I needed to keep
-            tending. Moving fast with Claude Code rather than formal
+            tending.
+          </p>
+          <p className="leading-relaxed text-olive-soft">
+            Moving fast with Claude Code rather than formal
             wireframes let me test real interaction patterns sooner than a
             traditional design process would have, but it came with real
             trade-offs, like fixing bugs after they&rsquo;d already shipped
