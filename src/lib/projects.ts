@@ -59,9 +59,9 @@ export const projects: Project[] = [
   },
   {
     slug: "dublin-accessibility-audit",
-    title: "Dublin Accessibility Audit",
+    title: "Experiencing Accessible UX in Dublin, Ireland",
     tagline:
-      "A city-wide accessibility audit uncovering barriers in Dublin's public digital services for people using assistive technology.",
+      "A Dublin intensive on web design, connecting real-world observation to accessible code.",
     tags: ["Accessibility", "Research", "Audit"],
     role: "Accessibility Researcher",
     timeline: "2025",
@@ -86,4 +86,7 @@ export function getProject(slug: string) {
 
 // Slugs with their own bespoke page under src/app/work/<slug>/page.tsx,
 // which takes routing priority over the generic [slug] template.
-export const customCaseStudySlugs = ["ai-onboarding-learning-hub"];
+export const customCaseStudySlugs = [
+  "ai-onboarding-learning-hub",
+  "dublin-accessibility-audit",
+];
