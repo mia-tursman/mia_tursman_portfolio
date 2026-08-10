@@ -27,6 +27,14 @@ export default function Nav() {
             LinkedIn
           </a>
           <a
+            href={contact.resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-marigold px-4 py-1.5 font-medium text-olive transition-colors hover:bg-marigold hover:text-ink"
+          >
+            Resume
+          </a>
+          <a
             href={`mailto:${contact.email}`}
             className="rounded-full bg-marigold px-4 py-1.5 font-medium text-ink transition-colors hover:bg-marigold-dark"
           >
