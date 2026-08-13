@@ -117,6 +117,21 @@ export default function TakanockIntakeHubPage() {
               </dd>
             </div>
           </dl>
+
+          <div className="flex flex-col gap-2 rounded-3xl border border-olive/10 bg-sand-light p-6">
+            <span className="text-xs font-medium tracking-wide text-rust-text uppercase">
+              At a Glance
+            </span>
+            <p className="text-base leading-relaxed text-olive sm:text-lg">
+              IT and GIS requests at Takanock were untracked, scattered
+              across Slack and email, with no visibility for the people
+              submitting them or the people fulfilling them. I built a
+              unified intake app that moved the entire experience off
+              Claude entirely — removing the setup barrier that discovery
+              interviews showed was stopping people from using automation
+              tools in the first place.
+            </p>
+          </div>
         </section>
 
         <section className="flex flex-col gap-4">

@@ -120,6 +120,20 @@ export default function AiOnboardingLearningHubPage() {
               </dd>
             </div>
           </dl>
+
+          <div className="flex flex-col gap-2 rounded-3xl border border-olive/10 bg-sand-light p-6">
+            <span className="text-xs font-medium tracking-wide text-rust-text uppercase">
+              At a Glance
+            </span>
+            <p className="text-base leading-relaxed text-olive sm:text-lg">
+              New hires at Takanock were handed dense PDFs about AI tools
+              with no structure and no way to ask questions. I built a
+              guided, chatbot-driven learning hub that walks people through
+              Claude tools step by step — and logs every question asked,
+              turning onboarding into something that keeps improving
+              instead of a one-time document dump.
+            </p>
+          </div>
         </section>
 
         <section className="flex flex-col gap-4">
