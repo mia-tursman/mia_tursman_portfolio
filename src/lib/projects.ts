@@ -40,7 +40,7 @@ export const projects: Project[] = [
     slug: "dublin-accessibility-audit",
     title: "Experiencing Accessible UX in Dublin, Ireland",
     tagline:
-      "A three-week Dublin intensive connecting real-world accessibility research to accessible, WCAG-compliant code.",
+      "A three-week Dublin intensive connecting real-world accessibility research to accessible code.",
     tags: ["Accessibility Audit", "WCAG 2.2", "Field Research"],
     role: "Accessibility Researcher",
     timeline: "2025",

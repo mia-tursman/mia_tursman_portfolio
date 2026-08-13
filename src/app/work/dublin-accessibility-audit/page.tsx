@@ -79,7 +79,7 @@ export default function DublinAccessibilityAuditPage() {
         </h1>
         <p className="max-w-2xl text-lg leading-relaxed text-olive-soft italic">
           A three-week Dublin intensive connecting real-world accessibility
-          research to accessible, WCAG-compliant code
+          research to accessible code
         </p>
       </header>
 
