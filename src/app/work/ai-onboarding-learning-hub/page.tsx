@@ -44,7 +44,8 @@ export default function AiOnboardingLearningHubPage() {
           AI Onboarding Learning Hub
         </h1>
         <p className="max-w-2xl text-lg leading-relaxed text-olive-soft italic">
-          A guided, AI-assisted learning experience for new hire onboarding
+          A guided, AI-assisted learning experience that walks new hires
+          through Takanock&rsquo;s Claude tools
         </p>
         <p className="max-w-2xl leading-relaxed text-olive-soft">
           During the summer of 2026, I interned at a startup called

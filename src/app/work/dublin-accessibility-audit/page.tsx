@@ -78,8 +78,8 @@ export default function DublinAccessibilityAuditPage() {
           Experiencing Accessible UX in Dublin, Ireland
         </h1>
         <p className="max-w-2xl text-lg leading-relaxed text-olive-soft italic">
-          A Dublin intensive on web design, connecting real-world
-          observation to accessible code
+          A three-week Dublin intensive connecting real-world accessibility
+          research to accessible, WCAG-compliant code
         </p>
       </header>
 

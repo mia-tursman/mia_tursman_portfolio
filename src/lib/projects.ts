@@ -40,12 +40,8 @@ export const projects: Project[] = [
     slug: "dublin-accessibility-audit",
     title: "Experiencing Accessible UX in Dublin, Ireland",
     tagline:
-      "A Dublin intensive on web design, connecting real-world observation to accessible code.",
-    tags: [
-      "Digital and Real-World Accessibility",
-      "WCAG 2.2 Compliance",
-      "Field Research",
-    ],
+      "A three-week Dublin intensive connecting real-world accessibility research to accessible, WCAG-compliant code.",
+    tags: ["Accessibility Audit", "WCAG 2.2", "Field Research"],
     role: "Accessibility Researcher",
     timeline: "2025",
     team: "Independent audit, in partnership with local advocacy group",
@@ -65,7 +61,7 @@ export const projects: Project[] = [
     slug: "ai-onboarding-learning-hub",
     title: "AI Onboarding Learning Hub",
     tagline:
-      "A guided, AI-assisted learning experience for new hire onboarding.",
+      "A guided, AI-assisted learning experience that walks new hires through Takanock's Claude tools.",
     tags: ["Onboarding", "AI Learning", "UX"],
     role: "UX Designer",
     timeline: "2025 — 2026",

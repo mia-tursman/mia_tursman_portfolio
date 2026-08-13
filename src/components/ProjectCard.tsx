@@ -22,7 +22,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           {project.tagline}
         </p>
         <div className="mt-auto flex flex-col gap-3">
-          <div className="flex flex-wrap gap-2">
+          <div className="flex min-h-[3.5rem] flex-wrap content-start items-start gap-2">
             {tags.map((tag) => (
               <span
                 key={tag}
