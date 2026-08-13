@@ -83,6 +83,19 @@ export default function DublinAccessibilityAuditPage() {
         </p>
       </header>
 
+      <div className="mb-10 flex flex-col gap-2 rounded-3xl border border-olive/10 bg-sand-light p-6">
+        <span className="text-xs font-medium tracking-wide text-rust-text uppercase">
+          At a Glance
+        </span>
+        <p className="text-base leading-relaxed text-olive sm:text-lg">
+          During a three-week Dublin intensive, I audited a real museum
+          for accessibility barriers, then built my own WCAG-compliant
+          website from scratch. Seeing exclusion happen in a physical
+          space — a missing ramp, a dim room — changed how I read every
+          abstract accessibility guideline afterward.
+        </p>
+      </div>
+
       <ImagePlaceholder
         alt="Hero photo from the Dublin intensive — a scenic or campus shot representing the trip"
         className="aspect-video w-full rounded-[2.5rem]"
@@ -154,19 +167,6 @@ export default function DublinAccessibilityAuditPage() {
               </dd>
             </div>
           </dl>
-
-          <div className="flex flex-col gap-2 rounded-3xl border border-olive/10 bg-sand-light p-6">
-            <span className="text-xs font-medium tracking-wide text-rust-text uppercase">
-              At a Glance
-            </span>
-            <p className="text-base leading-relaxed text-olive sm:text-lg">
-              During a three-week Dublin intensive, I audited a real museum
-              for accessibility barriers, then built my own WCAG-compliant
-              website from scratch. Seeing exclusion happen in a physical
-              space — a missing ramp, a dim room — changed how I read every
-              abstract accessibility guideline afterward.
-            </p>
-          </div>
         </section>
 
         <section className="flex flex-col gap-4">
