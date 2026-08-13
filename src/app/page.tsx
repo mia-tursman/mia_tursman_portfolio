@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-5xl px-6 sm:px-8">
       <section className="flex flex-col gap-6 py-20 sm:py-28">
-        <p className="font-hand -rotate-2 text-2xl text-rust-text">
+        <p className="font-sans text-sm font-semibold tracking-widest text-rust-text uppercase">
           {contact.role}
         </p>
         <h1 className="max-w-2xl font-serif text-5xl font-medium tracking-tight text-olive sm:text-6xl">
