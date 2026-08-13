@@ -20,7 +20,7 @@ export const projects: Project[] = [
     title: "Takanock Intake Hub",
     tagline:
       "One front door for IT, GIS, and Automation requests — with AI-driven routing and status tracking.",
-    tags: ["UX Design", "Workflow Redesign", "Next.js", "Research"],
+    tags: ["UX Design", "Workflow Redesign", "Next.js"],
     role: "UX Design, Research, Front-end Development, Workflow Design",
     timeline: "Summer 2026",
     team: "Independent build, in partnership with IT and GIS stakeholders",
@@ -45,7 +45,6 @@ export const projects: Project[] = [
       "Digital and Real-World Accessibility",
       "WCAG 2.2 Compliance",
       "Field Research",
-      "Auditing",
     ],
     role: "Accessibility Researcher",
     timeline: "2025",
