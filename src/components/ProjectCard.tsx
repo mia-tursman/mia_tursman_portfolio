@@ -5,6 +5,7 @@ const labelTextByColor: Record<string, string> = {
   "bg-olive": "text-sand-light",
   "bg-rust": "text-ink",
   "bg-marigold": "text-ink",
+  "bg-lilac": "text-sand-light",
 };
 
 export default function ProjectCard({ project }: { project: Project }) {

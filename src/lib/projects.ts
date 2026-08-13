@@ -58,6 +58,27 @@ export const projects: Project[] = [
       "Placeholder outcome — add completion rate improvements, time-to-productivity, or survey results once available.",
   },
   {
+    slug: "takanock-intake-hub",
+    title: "Takanock Intake Hub",
+    tagline:
+      "One front door for IT, GIS, and Automation requests — with AI-driven routing and status tracking.",
+    tags: ["Internal Tools", "AI / UX", "Workflow Design"],
+    role: "UX Design, Research, Front-end Development, Workflow Design",
+    timeline: "Summer 2026",
+    team: "Independent build, in partnership with IT and GIS stakeholders",
+    color: "bg-lilac",
+    overview:
+      "A single deployed web app that replaced untracked Slack requests and a hard-to-adopt Claude skill with one place to submit IT, GIS, and Automation requests, backed by an AI assistant and Airtable-driven status tracking.",
+    challenge:
+      "IT and GIS requests arrived as untracked Slack messages and verbal asks with no central log, no assignment workflow, and no status visibility, a gap that was only growing as Takanock scaled from roughly 33 to 50+ people.",
+    process:
+      "The project moved through three iterations — an internal Claude skill, a standalone IT Help Desk app, and finally a unified hub — after discovery interviews showed the setup burden of a Claude-based tool, not lack of interest, was the real adoption barrier.",
+    solution:
+      "A Next.js app with an AI Assistant for plain-language routing, a multi-category request form, and a Check My Ticket status lookup, each writing to its own Airtable base.",
+    outcome:
+      "Delivered as this internship's capstone project, with a full SOP so the system could keep running after the internship ended.",
+  },
+  {
     slug: "dublin-accessibility-audit",
     title: "Experiencing Accessible UX in Dublin, Ireland",
     tagline:
@@ -89,4 +110,5 @@ export function getProject(slug: string) {
 export const customCaseStudySlugs = [
   "ai-onboarding-learning-hub",
   "dublin-accessibility-audit",
+  "takanock-intake-hub",
 ];
