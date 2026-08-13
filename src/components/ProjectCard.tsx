@@ -1,16 +1,7 @@
 import Link from "next/link";
 import type { Project } from "@/lib/projects";
 
-const labelTextByColor: Record<string, string> = {
-  "bg-olive": "text-sand-light",
-  "bg-rust": "text-ink",
-  "bg-marigold": "text-ink",
-  "bg-lilac": "text-sand-light",
-};
-
 export default function ProjectCard({ project }: { project: Project }) {
-  const labelText = labelTextByColor[project.color] ?? "text-ink";
-
   return (
     <Link
       href={`/work/${project.slug}`}
@@ -20,11 +11,6 @@ export default function ProjectCard({ project }: { project: Project }) {
         <div
           className={`h-full w-full transition-transform duration-300 group-hover:scale-105 ${project.color}`}
         />
-        <span
-          className={`font-hand absolute top-3 right-4 rotate-3 text-lg ${labelText}`}
-        >
-          case study
-        </span>
       </div>
       <div className="flex flex-1 flex-col gap-3 p-6">
         <h3 className="font-serif text-lg font-semibold tracking-tight text-olive">

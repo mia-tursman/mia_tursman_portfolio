@@ -20,7 +20,7 @@ export const projects: Project[] = [
     title: "Takanock Intake Hub",
     tagline:
       "One front door for IT, GIS, and Automation requests — with AI-driven routing and status tracking.",
-    tags: ["Internal Tools", "AI / UX", "Workflow Design"],
+    tags: ["UX Design", "Workflow Redesign", "Next.js", "Research"],
     role: "UX Design, Research, Front-end Development, Workflow Design",
     timeline: "Summer 2026",
     team: "Independent build, in partnership with IT and GIS stakeholders",
@@ -41,7 +41,12 @@ export const projects: Project[] = [
     title: "Experiencing Accessible UX in Dublin, Ireland",
     tagline:
       "A Dublin intensive on web design, connecting real-world observation to accessible code.",
-    tags: ["Accessibility", "Research", "Audit"],
+    tags: [
+      "Digital and Real-World Accessibility",
+      "WCAG 2.2 Compliance",
+      "Field Research",
+      "Auditing",
+    ],
     role: "Accessibility Researcher",
     timeline: "2025",
     team: "Independent audit, in partnership with local advocacy group",
@@ -62,7 +67,7 @@ export const projects: Project[] = [
     title: "AI Onboarding Learning Hub",
     tagline:
       "A guided, AI-assisted learning experience for new hire onboarding.",
-    tags: ["Onboarding", "Learning Design", "AI / UX"],
+    tags: ["Onboarding", "AI Learning", "UX"],
     role: "UX Designer",
     timeline: "2025 — 2026",
     team: "1 designer, 3 engineers, 1 L&D partner",

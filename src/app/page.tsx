@@ -29,8 +29,8 @@ export default function Home() {
           </h2>
           <svg
             width="120"
-            height="12"
-            viewBox="0 0 120 12"
+            height="16"
+            viewBox="0 0 120 16"
             fill="none"
             aria-hidden="true"
             className="mt-1 ml-0.5 text-rust"
