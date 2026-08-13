@@ -48,6 +48,14 @@ export default function TakanockIntakeHubPage() {
           One front door for IT, GIS, and Automation requests — with
           AI-driven routing and status tracking
         </p>
+        <p className="max-w-2xl leading-relaxed text-olive-soft">
+          During the summer of 2026, I interned at a startup called
+          &ldquo;Takanock.&rdquo; This company is a renewable energy and data
+          center infrastructure company based out of offices in Michigan,
+          Maryland, and Texas. As the industry scales fast, teams at Takanock
+          often grow faster than their internal tools and processes — which
+          is exactly the gap this project addressed.
+        </p>
       </header>
 
       <div className="mb-10 flex flex-col gap-2 rounded-3xl border border-olive/10 bg-sand-light p-6">
