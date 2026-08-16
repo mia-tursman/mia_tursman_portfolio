@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { projects, getProject } from "@/lib/projects";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
@@ -334,7 +335,58 @@ export default function TakanockIntakeHubPage() {
             </li>
           </ul>
 
-          <ImagePlaceholder alt="Screenshot of the Assistant tab in the Takanock Intake Hub routing a plain-language request" />
+          <div className="flex flex-col gap-2">
+            <div className="overflow-hidden rounded-[2rem] border border-olive/15 bg-sand-light shadow-lg shadow-olive/15">
+              <div className="flex items-center gap-1.5 border-b border-olive/10 px-5 py-3">
+                <span className="h-2.5 w-2.5 rounded-full bg-rust/50" />
+                <span className="h-2.5 w-2.5 rounded-full bg-marigold/50" />
+                <span className="h-2.5 w-2.5 rounded-full bg-lilac/50" />
+                <span className="ml-2 text-xs font-medium tracking-wide text-olive-soft uppercase">
+                  Assistant — Live Conversation
+                </span>
+              </div>
+              <div className="h-[520px] overflow-y-auto overscroll-contain">
+                <Image
+                  src="/intakeWalkthrough1.jpeg"
+                  alt="Screenshot of the Takanock Assistant chat: a user reporting they can't access their Slack account and providing their name and department to start a support ticket"
+                  width={1290}
+                  height={1274}
+                  className="block h-auto w-full"
+                />
+                <Image
+                  src="/intakeWalkthrough2.jpeg"
+                  alt="Screenshot of the Takanock Assistant chat: the assistant asking clarifying questions about which app the issue is happening on and when it started"
+                  width={1278}
+                  height={868}
+                  className="block h-auto w-full border-t border-olive/10"
+                />
+                <Image
+                  src="/intakeWalkthrough3.jpeg"
+                  alt="Screenshot of the Takanock Assistant chat: the assistant summarizing the ticket details and confirming submission after the user replies yes"
+                  width={1290}
+                  height={1340}
+                  className="block h-auto w-full border-t border-olive/10"
+                />
+              </div>
+            </div>
+            <p className="flex items-center justify-center gap-1.5 text-xs font-medium text-olive-soft">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="h-3.5 w-3.5"
+              >
+                <path
+                  d="M12 5v13m0 0l-5-5m5 5l5-5"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              Scroll within the window to see the full conversation
+            </p>
+          </div>
 
           <ul className={listClass}>
             <li className={liClass}>
