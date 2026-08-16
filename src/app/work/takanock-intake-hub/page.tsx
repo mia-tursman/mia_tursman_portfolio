@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { projects, getProject } from "@/lib/projects";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import CaptionedImage from "@/components/CaptionedImage";
 
 const project = getProject("takanock-intake-hub")!;
 const currentIndex = projects.findIndex(
@@ -74,9 +74,12 @@ export default function TakanockIntakeHubPage() {
         </p>
       </div>
 
-      <ImagePlaceholder
-        alt="Homepage / Assistant tab screenshot of the live Takanock Intake Hub site"
-        className="aspect-video w-full rounded-[2.5rem]"
+      <Image
+        src="/intakeHome.jpeg"
+        alt="The Takanock Intake Hub homepage, showing the Assistant tab alongside Submit a Request and Check My Ticket"
+        width={2756}
+        height={1892}
+        className="h-auto w-full rounded-[2.5rem] shadow-lg shadow-olive/10"
       />
 
       <div className="flex flex-col gap-12 pt-14">
@@ -184,6 +187,14 @@ export default function TakanockIntakeHubPage() {
             </ul>
           </div>
 
+          <Image
+            src="/intakeProblem.jpeg"
+            alt="An original IT Helpdesk & Data Request Intake Form submission from Jacob Paul describing the unstructured, untracked request problem this project was built to solve"
+            width={1612}
+            height={1696}
+            className="h-auto w-full rounded-2xl shadow-lg shadow-olive/10"
+          />
+
           <p className="leading-relaxed text-olive-soft">
             As Takanock scales from roughly 33 to 50+ people, these problems
             become more apparent — more people meant more untracked
@@ -276,8 +287,6 @@ export default function TakanockIntakeHubPage() {
             </li>
           </ol>
 
-          <ImagePlaceholder alt="Screenshot of the original IT-Help-Desk Claude skill version of the Intake Hub, if available" />
-
           <ol className={olClass} start={2}>
             <li className={liClass}>
               <strong className="text-olive">
@@ -294,7 +303,18 @@ export default function TakanockIntakeHubPage() {
             </li>
           </ol>
 
-          <ImagePlaceholder alt="Screenshot of the earlier standalone IT Help Desk Vercel app (tak-it-help.vercel.app)" />
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <CaptionedImage
+              src="/intakeSkill.jpeg"
+              alt="The original it-help-desk Claude skill configuration, showing its description and Airtable field mapping"
+              caption="v1 — Claude skill"
+            />
+            <CaptionedImage
+              src="/originalIntake.jpeg"
+              alt="The earlier standalone Takanock IT Help Desk web app, showing its chat-style support request form"
+              caption="v2 — Standalone app"
+            />
+          </div>
 
           <ol className={olClass} start={3}>
             <li className={liClass}>
@@ -407,7 +427,18 @@ export default function TakanockIntakeHubPage() {
             </li>
           </ul>
 
-          <ImagePlaceholder alt="Screenshot of the Check My Ticket page showing a ticket's status in the Takanock Intake Hub" />
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <CaptionedImage
+              src="/intakeBase.jpeg"
+              alt="An Airtable record in the Takanock Intake Hub Database showing Mia Tursman's Slack access request, with status, department, and description fields"
+              caption="Airtable record"
+            />
+            <CaptionedImage
+              src="/intakeTicket.jpeg"
+              alt="The Check My Ticket page listing an employee's submitted IT, GIS, and Automation requests with their current status"
+              caption="Check My Ticket page"
+            />
+          </div>
 
           <ul className={listClass}>
             <li className={liClass}>
@@ -444,7 +475,13 @@ export default function TakanockIntakeHubPage() {
             redesigning the whole system.
           </p>
 
-          <ImagePlaceholder alt="Screenshot of one of the Airtable bases the Takanock Intake Hub writes to (IT Help Desk, GIS Requests, or Automation Ideas)" />
+          <Image
+            src="/IntakeOptions.jpeg"
+            alt="The Submit a Request form's category dropdown, showing IT Help Desk, GIS Request, and Automation Idea as options"
+            width={1354}
+            height={1732}
+            className="mx-auto h-auto w-full max-w-xs rounded-2xl shadow-lg shadow-olive/10 sm:max-w-sm"
+          />
         </section>
 
         <section className="flex flex-col gap-8">

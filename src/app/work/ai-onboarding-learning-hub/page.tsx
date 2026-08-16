@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { projects, getProject } from "@/lib/projects";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import CaptionedImage from "@/components/CaptionedImage";
 
 const project = getProject("ai-onboarding-learning-hub")!;
 const currentIndex = projects.findIndex(
@@ -71,9 +73,12 @@ export default function AiOnboardingLearningHubPage() {
         </p>
       </div>
 
-      <ImagePlaceholder
-        alt="Homepage screenshot of the live AI Onboarding Learning Hub site"
-        className="aspect-video w-full rounded-[2.5rem]"
+      <Image
+        src="/learningHubHero.jpeg"
+        alt="The Takanock AI Learning Hub welcome screen, introducing Claude and the hub's purpose to new hires"
+        width={1316}
+        height={766}
+        className="h-auto w-full rounded-[2.5rem] shadow-lg shadow-olive/10"
       />
 
       <div className="flex flex-col gap-12 pt-14">
@@ -284,9 +289,25 @@ export default function AiOnboardingLearningHubPage() {
             </ul>
           </div>
 
-          <ImagePlaceholder alt="Screenshot of the Airtable table logging FAQ themes and questions collected from the chatbot" />
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <CaptionedImage
+              src="/learningHubHomePage.jpeg"
+              alt="The Takanock AI Learning Hub's organized resource grid, grouped into Takanock Resources, Claude Tools, and AI Concepts sections"
+              caption="Step-by-step structure"
+            />
+            <CaptionedImage
+              src="/learningHubChat.jpeg"
+              alt="A user asking the Learning Hub's built-in chatbot how to get access to Claude Code through the company, with the assistant pointing them to the right page"
+              caption="Interactive chatbot"
+            />
+            <CaptionedImage
+              src="/learningHubCustomize.jpeg"
+              alt="The Learning Hub's Customize page defining Claude concepts like API, MCP, SDK, and webhooks in plain language"
+              caption="Examples made concrete"
+            />
+          </div>
 
-          <ImagePlaceholder alt="Screenshot of the Learning Hub chatbot answering a user's question in action" />
+          <ImagePlaceholder alt="Screenshot of the Airtable table logging FAQ themes and questions collected from the chatbot" />
 
           <p className="leading-relaxed text-olive-soft">
             Following the initial design, we shipped a version one to be
