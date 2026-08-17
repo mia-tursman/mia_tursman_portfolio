@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import { projects, getProject } from "@/lib/projects";
 import CaptionedImage from "@/components/CaptionedImage";
@@ -72,12 +71,13 @@ export default function AiOnboardingLearningHubPage() {
         </p>
       </div>
 
-      <Image
+      <CaptionedImage
         src="/learningHubHero.jpeg"
         alt="The Takanock AI Learning Hub welcome screen, introducing Claude and the hub's purpose to new hires"
+        caption="The Learning Hub welcome screen"
         width={1316}
         height={766}
-        className="h-auto w-full rounded-[2.5rem] shadow-lg shadow-olive/10"
+        rounded="rounded-[2.5rem]"
       />
 
       <div className="flex flex-col gap-12 pt-14">

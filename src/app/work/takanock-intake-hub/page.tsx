@@ -74,12 +74,13 @@ export default function TakanockIntakeHubPage() {
         </p>
       </div>
 
-      <Image
+      <CaptionedImage
         src="/intakeHome.jpeg"
         alt="The Takanock Intake Hub homepage, showing the Assistant tab alongside Submit a Request and Check My Ticket"
+        caption="The Intake Hub homepage"
         width={2756}
         height={1892}
-        className="h-auto w-full rounded-[2.5rem] shadow-lg shadow-olive/10"
+        rounded="rounded-[2.5rem]"
       />
 
       <div className="flex flex-col gap-12 pt-14">
@@ -187,12 +188,12 @@ export default function TakanockIntakeHubPage() {
             </ul>
           </div>
 
-          <Image
+          <CaptionedImage
             src="/intakeProblem.jpeg"
             alt="An original IT Helpdesk & Data Request Intake Form submission from Jacob Paul describing the unstructured, untracked request problem this project was built to solve"
+            caption="Jacob's original Airtable request"
             width={1612}
             height={1696}
-            className="h-auto w-full rounded-2xl shadow-lg shadow-olive/10"
           />
 
           <p className="leading-relaxed text-olive-soft">
@@ -483,12 +484,13 @@ export default function TakanockIntakeHubPage() {
             redesigning the whole system.
           </p>
 
-          <Image
+          <CaptionedImage
             src="/IntakeOptions.jpeg"
             alt="The Submit a Request form's category dropdown, showing IT Help Desk, GIS Request, and Automation Idea as options"
+            caption="The Submit a Request category picker"
             width={1354}
             height={1732}
-            className="mx-auto h-auto w-full max-w-xs rounded-2xl shadow-lg shadow-olive/10 sm:max-w-sm"
+            className="mx-auto max-w-xs sm:max-w-sm"
           />
         </section>
 

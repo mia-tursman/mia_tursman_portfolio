@@ -12,10 +12,12 @@ type AboutSection = {
   paragraphs: string[];
   photoSrc: string;
   photoAlt: string;
-  photoAspect: string;
+  photoCaption: string;
   photoObjectPosition?: string;
   imageOnRight: boolean;
 };
+
+const photoColumnWidth = "w-full sm:w-2/5";
 
 const sections: AboutSection[] = [
   {
@@ -25,7 +27,7 @@ const sections: AboutSection[] = [
     ],
     photoSrc: "/headshot.JPG",
     photoAlt: "Portrait headshot of Mia Tursman",
-    photoAspect: "aspect-[3/4] w-full sm:w-2/5",
+    photoCaption: "Mia Tursman",
     imageOnRight: true,
   },
   {
@@ -36,8 +38,7 @@ const sections: AboutSection[] = [
     photoSrc: "/IMG_6568.jpeg",
     photoAlt:
       "A calm Lake Michigan shoreline in Traverse City, with people wading in the turquoise water under a clear blue sky",
-    photoAspect: "aspect-[4/3] w-full sm:w-2/5",
-    photoObjectPosition: "object-bottom",
+    photoCaption: "Grand Traverse Bay, Traverse City, Michigan",
     imageOnRight: false,
   },
   {
@@ -49,7 +50,7 @@ const sections: AboutSection[] = [
     photoSrc: "/google.jpeg",
     photoAlt:
       "An adaptive gaming setup at Google's Dublin Accessible Technology Lab, showing a switch-and-joystick controller on a desk in front of two monitors displaying an accessible sports game",
-    photoAspect: "aspect-[4/3] w-full sm:w-2/5",
+    photoCaption: "Google's Dublin Accessible Technology Lab",
     imageOnRight: true,
   },
 ];
@@ -71,16 +72,19 @@ export default function AboutPage() {
               section.imageOnRight ? "sm:flex-row" : "sm:flex-row-reverse"
             }`}
           >
-            <div
-              className={`relative overflow-hidden rounded-[2rem] shadow-lg shadow-olive/10 ${section.photoAspect}`}
-            >
-              <Image
-                src={section.photoSrc}
-                alt={section.photoAlt}
-                fill
-                className={`object-cover ${section.photoObjectPosition ?? ""}`}
-              />
-            </div>
+            <figure className={`flex flex-col gap-2 ${photoColumnWidth}`}>
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-3xl shadow-lg shadow-olive/10">
+                <Image
+                  src={section.photoSrc}
+                  alt={section.photoAlt}
+                  fill
+                  className={`object-cover ${section.photoObjectPosition ?? ""}`}
+                />
+              </div>
+              <figcaption className="text-center text-xs font-medium tracking-wide text-olive-soft uppercase">
+                {section.photoCaption}
+              </figcaption>
+            </figure>
             <div className="flex flex-1 flex-col gap-4">
               <h2 className="font-serif text-2xl font-medium tracking-tight text-olive sm:text-3xl">
                 {section.heading}

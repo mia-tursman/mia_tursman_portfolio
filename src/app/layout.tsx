@@ -77,8 +77,16 @@ export default function RootLayout({
       className={`${fraunces.variable} ${workSans.variable} ${caveat.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-full focus:bg-marigold focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-ink"
+        >
+          Skip to content
+        </a>
         <Nav />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

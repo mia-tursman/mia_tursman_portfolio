@@ -2,9 +2,21 @@ import { projects } from "@/lib/projects";
 import { contact } from "@/lib/contact";
 import ProjectCard from "@/components/ProjectCard";
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: contact.name,
+  jobTitle: contact.role,
+  sameAs: [contact.linkedin],
+};
+
 export default function Home() {
   return (
     <div className="mx-auto max-w-5xl px-6 sm:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <section className="flex flex-col gap-6 py-20 sm:py-28">
         <p className="font-sans text-sm font-semibold tracking-widest text-rust-text uppercase">
           {contact.role}
