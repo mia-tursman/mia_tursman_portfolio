@@ -25,8 +25,21 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: `${contact.name} — ${contact.role}`,
+  title: {
+    default: `${contact.name} — ${contact.role}`,
+    template: `%s — ${contact.name}`,
+  },
   description: `Portfolio of ${contact.name}, ${contact.role}.`,
+  openGraph: {
+    title: `${contact.name} — ${contact.role}`,
+    description: `Portfolio of ${contact.name}, ${contact.role}.`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${contact.name} — ${contact.role}`,
+    description: `Portfolio of ${contact.name}, ${contact.role}.`,
+  },
 };
 
 export default function RootLayout({

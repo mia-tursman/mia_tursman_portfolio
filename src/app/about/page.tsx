@@ -3,7 +3,7 @@ import Image from "next/image";
 import { contact } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: `About — ${contact.name}`,
+  title: "About",
   description: `A little more about ${contact.name}.`,
 };
 
