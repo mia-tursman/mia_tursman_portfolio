@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { projects, getProject } from "@/lib/projects";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import CaptionedImage from "@/components/CaptionedImage";
 
 const project = getProject("ai-onboarding-learning-hub")!;
@@ -21,7 +20,7 @@ const liClass = "leading-relaxed text-olive-soft";
 
 export default function AiOnboardingLearningHubPage() {
   return (
-    <article className="mx-auto max-w-3xl overflow-x-hidden px-6 pb-24 sm:px-8">
+    <article className="mx-auto max-w-3xl px-6 pb-24 sm:px-8">
       <div className="py-10">
         <Link
           href="/#work"
@@ -244,8 +243,6 @@ export default function AiOnboardingLearningHubPage() {
             shaped the build:
           </p>
 
-          <ImagePlaceholder alt="Photo of rough early sketches and planning notes for the Learning Hub" />
-
           <div className="flex flex-col gap-4 rounded-3xl border border-olive/10 bg-sand-light p-6">
             <span className="text-xs font-medium tracking-wide text-rust-text uppercase">
               Decisions I made
@@ -289,35 +286,29 @@ export default function AiOnboardingLearningHubPage() {
             </ul>
           </div>
 
-          <div className="relative left-1/2 w-screen -translate-x-1/2">
-            <div className="mx-auto max-w-5xl px-6 sm:px-8">
-              <div className="grid grid-cols-1 items-start gap-8 sm:grid-cols-3">
-                <CaptionedImage
-                  src="/learningHubHomePage.jpeg"
-                  alt="The Takanock AI Learning Hub's organized resource grid, grouped into Takanock Resources, Claude Tools, and AI Concepts sections"
-                  caption="Step-by-step structure"
-                  width={2260}
-                  height={1438}
-                />
-                <CaptionedImage
-                  src="/learningHubChat.jpeg"
-                  alt="A user asking the Learning Hub's built-in chatbot how to get access to Claude Code through the company, with the assistant pointing them to the right page"
-                  caption="Interactive chatbot"
-                  width={2750}
-                  height={1884}
-                />
-                <CaptionedImage
-                  src="/learningHubCustomize.jpeg"
-                  alt="The Learning Hub's Customize page defining Claude concepts like API, MCP, SDK, and webhooks in plain language"
-                  caption="Examples made concrete"
-                  width={2276}
-                  height={1768}
-                />
-              </div>
-            </div>
+          <div className="flex flex-col gap-8">
+            <CaptionedImage
+              src="/learningHubHomePage.jpeg"
+              alt="The Takanock AI Learning Hub's organized resource grid, grouped into Takanock Resources, Claude Tools, and AI Concepts sections"
+              caption="Step-by-step structure"
+              width={2260}
+              height={1438}
+            />
+            <CaptionedImage
+              src="/learningHubChat.jpeg"
+              alt="A user asking the Learning Hub's built-in chatbot how to get access to Claude Code through the company, with the assistant pointing them to the right page"
+              caption="Interactive chatbot"
+              width={2750}
+              height={1884}
+            />
+            <CaptionedImage
+              src="/learningHubCustomize.jpeg"
+              alt="The Learning Hub's Customize page defining Claude concepts like API, MCP, SDK, and webhooks in plain language"
+              caption="Examples made concrete"
+              width={2276}
+              height={1768}
+            />
           </div>
-
-          <ImagePlaceholder alt="Screenshot of the Airtable table logging FAQ themes and questions collected from the chatbot" />
 
           <p className="leading-relaxed text-olive-soft">
             Following the initial design, we shipped a version one to be
@@ -365,8 +356,6 @@ export default function AiOnboardingLearningHubPage() {
             solid understanding of the basics of HTML in order to review
             Claude Code&rsquo;s work.
           </p>
-
-          <ImagePlaceholder alt="Screenshot (or recreated mockup) of the garbled character encoding bug, e.g. â€” appearing instead of an em dash" />
         </section>
 
         <section className="flex flex-col gap-4">

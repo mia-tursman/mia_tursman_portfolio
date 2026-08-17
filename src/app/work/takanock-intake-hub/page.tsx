@@ -21,7 +21,7 @@ const liClass = "leading-relaxed text-olive-soft";
 
 export default function TakanockIntakeHubPage() {
   return (
-    <article className="mx-auto max-w-3xl overflow-x-hidden px-6 pb-24 sm:px-8">
+    <article className="mx-auto max-w-3xl px-6 pb-24 sm:px-8">
       <div className="py-10">
         <Link
           href="/#work"
@@ -303,25 +303,21 @@ export default function TakanockIntakeHubPage() {
             </li>
           </ol>
 
-          <div className="relative left-1/2 w-screen -translate-x-1/2">
-            <div className="mx-auto max-w-5xl px-6 sm:px-8">
-              <div className="grid grid-cols-1 items-start gap-8 sm:grid-cols-2">
-                <CaptionedImage
-                  src="/intakeSkill.jpeg"
-                  alt="The original it-help-desk Claude skill configuration, showing its description and Airtable field mapping"
-                  caption="v1 — Claude skill"
-                  width={3116}
-                  height={1968}
-                />
-                <CaptionedImage
-                  src="/originalIntake.jpeg"
-                  alt="The earlier standalone Takanock IT Help Desk web app, showing its chat-style support request form"
-                  caption="v2 — Standalone app"
-                  width={2336}
-                  height={1834}
-                />
-              </div>
-            </div>
+          <div className="flex flex-col gap-8">
+            <CaptionedImage
+              src="/intakeSkill.jpeg"
+              alt="The original it-help-desk Claude skill configuration, showing its description and Airtable field mapping"
+              caption="v1 — Claude skill"
+              width={3116}
+              height={1968}
+            />
+            <CaptionedImage
+              src="/originalIntake.jpeg"
+              alt="The earlier standalone Takanock IT Help Desk web app, showing its chat-style support request form"
+              caption="v2 — Standalone app"
+              width={2336}
+              height={1834}
+            />
           </div>
 
           <ol className={olClass} start={3}>
@@ -363,62 +359,57 @@ export default function TakanockIntakeHubPage() {
             </li>
           </ul>
 
-          <div className="relative left-1/2 w-screen -translate-x-1/2">
-            <div className="mx-auto flex max-w-[1400px] flex-col gap-2 px-6 sm:px-8">
-              <div className="overflow-hidden rounded-[2rem] border border-olive/15 bg-sand-light shadow-lg shadow-olive/15">
-                <div className="flex items-center gap-1.5 border-b border-olive/10 px-5 py-3">
-                  <span className="h-2.5 w-2.5 rounded-full bg-rust/50" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-marigold/50" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-lilac/50" />
-                  <span className="ml-2 text-xs font-medium tracking-wide text-olive-soft uppercase">
-                    Assistant — Live Conversation
-                  </span>
-                </div>
-                <div className="h-[min(85vh,900px)] overflow-y-auto overscroll-contain">
-                  <Image
-                    src="/intakeWalkthrough1.jpeg"
-                    alt="Screenshot of the Takanock Assistant chat: a user reporting they can't access their Slack account and providing their name and department to start a support ticket"
-                    width={1290}
-                    height={1274}
-                    sizes="100vw"
-                    className="block h-auto w-full"
-                  />
-                  <Image
-                    src="/intakeWalkthrough2.jpeg"
-                    alt="Screenshot of the Takanock Assistant chat: the assistant asking clarifying questions about which app the issue is happening on and when it started"
-                    width={1278}
-                    height={868}
-                    sizes="100vw"
-                    className="block h-auto w-full"
-                  />
-                  <Image
-                    src="/intakeWalkthrough3.jpeg"
-                    alt="Screenshot of the Takanock Assistant chat: the assistant summarizing the ticket details and confirming submission after the user replies yes"
-                    width={1290}
-                    height={1340}
-                    sizes="100vw"
-                    className="block h-auto w-full"
-                  />
-                </div>
+          <div className="flex flex-col gap-2">
+            <div className="overflow-hidden rounded-[2rem] border border-olive/15 bg-sand-light shadow-lg shadow-olive/15">
+              <div className="flex items-center gap-1.5 border-b border-olive/10 px-5 py-3">
+                <span className="h-2.5 w-2.5 rounded-full bg-rust/50" />
+                <span className="h-2.5 w-2.5 rounded-full bg-marigold/50" />
+                <span className="h-2.5 w-2.5 rounded-full bg-lilac/50" />
+                <span className="ml-2 text-xs font-medium tracking-wide text-olive-soft uppercase">
+                  Assistant — Live Conversation
+                </span>
               </div>
-              <p className="flex items-center justify-center gap-1.5 text-xs font-medium text-olive-soft">
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="h-3.5 w-3.5"
-                >
-                  <path
-                    d="M12 5v13m0 0l-5-5m5 5l5-5"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                Scroll within the window to see the full conversation
-              </p>
+              <div className="h-[640px] overflow-y-auto overscroll-contain">
+                <Image
+                  src="/intakeWalkthrough1.jpeg"
+                  alt="Screenshot of the Takanock Assistant chat: a user reporting they can't access their Slack account and providing their name and department to start a support ticket"
+                  width={1290}
+                  height={1274}
+                  className="block h-auto w-full"
+                />
+                <Image
+                  src="/intakeWalkthrough2.jpeg"
+                  alt="Screenshot of the Takanock Assistant chat: the assistant asking clarifying questions about which app the issue is happening on and when it started"
+                  width={1278}
+                  height={868}
+                  className="block h-auto w-full"
+                />
+                <Image
+                  src="/intakeWalkthrough3.jpeg"
+                  alt="Screenshot of the Takanock Assistant chat: the assistant summarizing the ticket details and confirming submission after the user replies yes"
+                  width={1290}
+                  height={1340}
+                  className="block h-auto w-full"
+                />
+              </div>
             </div>
+            <p className="flex items-center justify-center gap-1.5 text-xs font-medium text-olive-soft">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="h-3.5 w-3.5"
+              >
+                <path
+                  d="M12 5v13m0 0l-5-5m5 5l5-5"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              Scroll within the window to see the full conversation
+            </p>
           </div>
 
           <ul className={listClass}>
@@ -440,25 +431,21 @@ export default function TakanockIntakeHubPage() {
             </li>
           </ul>
 
-          <div className="relative left-1/2 w-screen -translate-x-1/2">
-            <div className="mx-auto max-w-5xl px-6 sm:px-8">
-              <div className="grid grid-cols-1 items-start gap-8 sm:grid-cols-2">
-                <CaptionedImage
-                  src="/intakeBase.jpeg"
-                  alt="An Airtable record in the Takanock Intake Hub Database showing Mia Tursman's Slack access request, with status, department, and description fields"
-                  caption="Airtable record"
-                  width={2742}
-                  height={1886}
-                />
-                <CaptionedImage
-                  src="/intakeTicket.jpeg"
-                  alt="The Check My Ticket page listing an employee's submitted IT, GIS, and Automation requests with their current status"
-                  caption="Check My Ticket page"
-                  width={2746}
-                  height={1886}
-                />
-              </div>
-            </div>
+          <div className="flex flex-col gap-8">
+            <CaptionedImage
+              src="/intakeBase.jpeg"
+              alt="An Airtable record in the Takanock Intake Hub Database showing Mia Tursman's Slack access request, with status, department, and description fields"
+              caption="Airtable record"
+              width={2742}
+              height={1886}
+            />
+            <CaptionedImage
+              src="/intakeTicket.jpeg"
+              alt="The Check My Ticket page listing an employee's submitted IT, GIS, and Automation requests with their current status"
+              caption="Check My Ticket page"
+              width={2746}
+              height={1886}
+            />
           </div>
 
           <ul className={listClass}>
