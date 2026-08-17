@@ -1,27 +1,51 @@
 import type { Metadata } from "next";
-import { Fraunces, Work_Sans, Caveat } from "next/font/google";
+import localFont from "next/font/local";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { contact } from "@/lib/contact";
 import "./globals.css";
 
-const fraunces = Fraunces({
+// Self-hosted (rather than next/font/google) so builds never depend on
+// fetching from fonts.gstatic.com at build time.
+const fraunces = localFont({
+  src: [
+    {
+      path: "./fonts/Fraunces-Variable.woff2",
+      weight: "400 700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Fraunces-Italic-Variable.woff2",
+      weight: "400 700",
+      style: "italic",
+    },
+  ],
   variable: "--font-fraunces",
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const workSans = Work_Sans({
+const workSans = localFont({
+  src: [
+    {
+      path: "./fonts/WorkSans-Variable.woff2",
+      weight: "400 700",
+      style: "normal",
+    },
+  ],
   variable: "--font-work-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const caveat = Caveat({
+const caveat = localFont({
+  src: [
+    {
+      path: "./fonts/Caveat-Variable.woff2",
+      weight: "500 700",
+      style: "normal",
+    },
+  ],
   variable: "--font-caveat",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
