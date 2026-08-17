@@ -395,14 +395,20 @@ export default function DublinAccessibilityAuditPage() {
           <p className="leading-relaxed text-olive-soft">
             That shift followed me directly into my own code. Building my
             travel blog, I started testing decisions against a new question:
-            not &ldquo;does this technically comply,&rdquo; but &ldquo;who
-            does this leave out if I get it wrong?&rdquo; That&rsquo;s a
-            different design instinct than the one I walked into this course
-            with, and it&rsquo;s one I don&rsquo;t think I could have
-            developed from a textbook alone. It took seeing exclusion happen
-            in a real room before I understood what I was actually building
-            toward every time I wrote an alt tag or tested a page with a
-            keyboard.
+          </p>
+
+          <blockquote className="border-l-4 border-lilac bg-lilac-tint py-4 pr-6 pl-6 text-lg leading-relaxed text-olive italic">
+            Not &ldquo;does this technically comply,&rdquo; but &ldquo;who
+            does this leave out if I get it wrong?&rdquo;
+          </blockquote>
+
+          <p className="leading-relaxed text-olive-soft">
+            That&rsquo;s a different design instinct than the one I walked
+            into this course with, and it&rsquo;s one I don&rsquo;t think I
+            could have developed from a textbook alone. It took seeing
+            exclusion happen in a real room before I understood what I was
+            actually building toward every time I wrote an alt tag or tested
+            a page with a keyboard.
           </p>
           <p className="leading-relaxed text-olive-soft">
             This experience was especially meaningful to me as a student

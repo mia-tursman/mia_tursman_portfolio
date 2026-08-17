@@ -224,28 +224,72 @@ export default function TakanockIntakeHubPage() {
             I&rsquo;d noticed over the internship, backed by real evidence
             from my discovery interviews. I specifically asked employees
             whether they&rsquo;d used the existing automation intake skill in
-            Claude to submit AI requests, and many hadn&rsquo;t — some
-            didn&rsquo;t know it existed, some knew about it but
-            didn&rsquo;t know how to set it up, and others said they simply
-            didn&rsquo;t have time to figure out the setup even if they
-            wanted to. It wasn&rsquo;t that people lacked automation ideas
-            worth submitting; it was that the tool asking them to open
-            Claude and configure a skill was the barrier itself.
+            Claude to submit AI requests, and most hadn&rsquo;t, for one of
+            three reasons:
           </p>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {[
+              "Didn't know the skill existed",
+              "Knew about it, but not how to set it up",
+              "Knew about it, but didn't have time to figure out the setup",
+            ].map((reason) => (
+              <div
+                key={reason}
+                className="flex gap-3 rounded-2xl bg-sand-light p-5 shadow-inner shadow-olive/5"
+              >
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="mt-0.5 h-5 w-5 shrink-0 text-rust-text"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  />
+                  <path
+                    d="M12 7.5v5.5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
+                  <circle cx="12" cy="16.25" r="1" fill="currentColor" />
+                </svg>
+                <p className="text-sm leading-relaxed text-olive-soft">
+                  {reason}
+                </p>
+              </div>
+            ))}
+          </div>
+
           <p className="leading-relaxed text-olive-soft">
-            That pattern confirmed what I suspected: it isn&rsquo;t actually
-            useful for us to build tools that require employees to open
-            Claude, connect the right integrations, and figure out an
-            unfamiliar interface before they can use them. Our job is to
-            bridge the gap between employees and the tools, not hand people a
-            new tool and a learning curve at the same time. If the Intake Hub
-            had stayed inside Claude, someone would&rsquo;ve had to connect
-            their own Airtable, navigate Claude&rsquo;s interface, and
-            install the skill correctly just to submit an IT ticket — the
-            same setup barrier my interviews had already shown was stopping
-            people from using the automation intake skill. Instead, I did
-            that technical work once, up front, so nobody using the Hub ever
-            has to.
+            It wasn&rsquo;t that people lacked automation ideas worth
+            submitting; it was that the tool asking them to open Claude and
+            configure a skill was the barrier itself. That pattern confirmed
+            what I suspected: it isn&rsquo;t actually useful for us to build
+            tools that require employees to open Claude, connect the right
+            integrations, and figure out an unfamiliar interface before they
+            can use them.
+          </p>
+
+          <blockquote className="border-l-4 border-lilac bg-lilac-tint py-4 pr-6 pl-6 text-lg leading-relaxed text-olive italic">
+            Our job is to bridge the gap between employees and the tools,
+            not hand people a new tool and a learning curve at the same
+            time.
+          </blockquote>
+
+          <p className="leading-relaxed text-olive-soft">
+            If the Intake Hub had stayed inside Claude, someone
+            would&rsquo;ve had to connect their own Airtable, navigate
+            Claude&rsquo;s interface, and install the skill correctly just
+            to submit an IT ticket — the same setup barrier my interviews
+            had already shown was stopping people from using the automation
+            intake skill. Instead, I did that technical work once, up
+            front, so nobody using the Hub ever has to.
           </p>
           <p className="leading-relaxed text-olive-soft">
             Seeing Jacob&rsquo;s IT and GIS requests come in through the same
@@ -514,11 +558,14 @@ export default function TakanockIntakeHubPage() {
             their own Airtable, figure out an often confusing interface, and
             download the skill correctly. Instead, I did that technical work
             myself, building an independent application with no learning
-            curve required to use it. I think that&rsquo;s a different kind
-            of ownership than just building what was asked for; it meant
-            trusting my own read of the actual problem over the first
-            proposed solution.
+            curve required to use it.
           </p>
+
+          <blockquote className="border-l-4 border-lilac bg-lilac-tint py-4 pr-6 pl-6 text-lg leading-relaxed text-olive italic">
+            A different kind of ownership than just building what was asked
+            for — trusting my own read of the actual problem over the first
+            proposed solution.
+          </blockquote>
           <p className="leading-relaxed text-olive-soft">
             I also really enjoyed learning the ins and outs of developing
             software using Claude Code through this project. I&rsquo;m happy

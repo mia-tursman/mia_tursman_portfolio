@@ -403,10 +403,14 @@ export default function AiOnboardingLearningHubPage() {
             rather than catching them earlier on paper. If I did this
             again, I&rsquo;d build in a lightweight review step before
             deployment rather than relying entirely on stakeholders to
-            catch what I&rsquo;d missed — not to slow down the process, but
-            to make the feedback loop something I designed for rather than
-            something that happened to me.
+            catch what I&rsquo;d missed.
           </p>
+
+          <blockquote className="border-l-4 border-lilac bg-lilac-tint py-4 pr-6 pl-6 text-lg leading-relaxed text-olive italic">
+            Not to slow down the process, but to make the feedback loop
+            something I designed for rather than something that happened to
+            me.
+          </blockquote>
           <p className="leading-relaxed text-olive-soft">
             Because my internship ended shortly after v1 shipped, I
             didn&rsquo;t get to see longer-term outcomes like adoption rates
