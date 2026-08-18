@@ -508,6 +508,15 @@ export default function TakanockIntakeHubPage() {
               agreed it was the right call before I made the switch.
             </li>
           </ul>
+
+          <CaptionedImage
+            src="/intakeStyle.png"
+            alt="Takanock Assistant Hub brand style guide, showing the color palette, typography, button states, badges, chat interface, and spacing/radius system used across the app"
+            caption="Takanock Assistant Hub brand style guide"
+            width={1472}
+            height={1660}
+            href="/intakeStyle.png"
+          />
         </section>
 
         <section className="flex flex-col gap-4">

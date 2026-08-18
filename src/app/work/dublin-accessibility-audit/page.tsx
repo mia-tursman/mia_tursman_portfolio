@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { projects, getProject } from "@/lib/projects";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import CaptionedImage from "@/components/CaptionedImage";
 
 const project = getProject("dublin-accessibility-audit")!;
 const currentIndex = projects.findIndex(
@@ -266,6 +267,58 @@ export default function DublinAccessibilityAuditPage() {
               </li>
             </ul>
           </div>
+
+          <div className="flex flex-col gap-3">
+            <span className="text-xs font-medium tracking-wide text-rust-text uppercase">
+              Source material
+            </span>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="https://umsicomplexwebdesign.github.io/dublin26/reviews/history_museum_review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-rust-text px-4 py-2 text-sm font-medium text-rust-text transition-colors hover:bg-rust-text hover:text-sand-light"
+              >
+                View our completed accessibility checklist
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="h-3.5 w-3.5"
+                >
+                  <path
+                    d="M7 17L17 7M17 7H9M17 7V15"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://mia-tursman.github.io/lec6/museum.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-rust-text px-4 py-2 text-sm font-medium text-rust-text transition-colors hover:bg-rust-text hover:text-sand-light"
+              >
+                View my coded writeup of our findings
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="h-3.5 w-3.5"
+                >
+                  <path
+                    d="M7 17L17 7M17 7H9M17 7V15"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
         </section>
 
         <section className="flex flex-col gap-4">
@@ -329,6 +382,15 @@ export default function DublinAccessibilityAuditPage() {
               </div>
             ))}
           </div>
+
+          <CaptionedImage
+            src="/dublinStyle.png"
+            alt="Ireland with Mia style guide, showing the travel blog's color palette, typography, navigation, hero block, and iconography"
+            caption="Ireland with Mia — style guide"
+            width={1472}
+            height={1660}
+            href="/dublinStyle.png"
+          />
         </section>
 
         <section className="flex flex-col gap-4">
