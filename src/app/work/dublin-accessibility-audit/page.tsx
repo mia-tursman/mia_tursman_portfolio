@@ -1,7 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { projects, getProject } from "@/lib/projects";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import CaptionedImage from "@/components/CaptionedImage";
 
 const project = getProject("dublin-accessibility-audit")!;
@@ -24,31 +24,67 @@ const guidelines = [
     name: "Contrast (Minimum)",
     description:
       "Text needed at least a 4.5:1 contrast ratio against its background — the same principle the museum mostly got right on labels, but missed inside display cases with glare and shadowing.",
-    photoAlt:
-      "Screenshot showing color contrast in use on my travel blog site — text meeting the 4.5:1 ratio against its background",
+    photos: [
+      {
+        src: "/dublinWave.png",
+        alt: "The WAVE accessibility evaluation tool overlaid on the Ireland with Mia homepage, showing 0 errors, 0 contrast errors, and an AIM score of 10 out of 10",
+        width: 3392,
+        height: 1898,
+      },
+    ],
   },
   {
     code: "1.1.1",
     name: "Non-text Content",
     description: "Every image needed meaningful alt text.",
-    photoAlt:
-      "Screenshot of dev tools or code showing descriptive alt text applied to an image on my site, or the image it describes",
+    photos: [
+      {
+        src: "/dublinAlt.png",
+        alt: "The Ireland with Mia site with alt text callouts overlaid on photos, including 'a girl with brown hair holding a guinness glass, this is Mia the author'",
+        width: 3392,
+        height: 1888,
+      },
+    ],
   },
   {
     code: "2.1.1",
     name: "Keyboard",
     description:
       "Every interactive element (including JavaScript lightboxes) had to be fully operable without a mouse.",
-    photoAlt:
-      "Screenshot showing a visible keyboard-focus state on an interactive element on my site",
+    photos: [
+      {
+        src: "/dublinFocus1.png",
+        alt: "A visible blue keyboard-focus ring around the 'Skip to Main Content' link on the Ireland with Mia site",
+        width: 590,
+        height: 508,
+      },
+      {
+        src: "/dublinFocus2.png",
+        alt: "A visible blue keyboard-focus ring around the 'Summary' link inside the Week One dropdown menu",
+        width: 888,
+        height: 612,
+      },
+      {
+        src: "/dublinFocus3.png",
+        alt: "A visible blue keyboard-focus ring around the 'Jump to Top' button",
+        width: 754,
+        height: 506,
+      },
+    ],
   },
   {
     code: "2.3.3",
     name: "prefers-reduced-motion",
     description:
       "Respecting a user's OS-level motion preference, rather than assuming everyone tolerates animation equally.",
-    photoAlt:
-      "Screenshot or recording showing the site's reduced-motion behavior, or the OS-level prefers-reduced-motion setting",
+    photos: [
+      {
+        src: "/dublinReduceMotion.png",
+        alt: "CSS code implementing the prefers-reduced-motion media query, disabling fade-in opacity, transform, and transition effects when a user has reduced motion enabled",
+        width: 676,
+        height: 196,
+      },
+    ],
   },
 ];
 
@@ -97,9 +133,13 @@ export default function DublinAccessibilityAuditPage() {
         </p>
       </div>
 
-      <ImagePlaceholder
-        alt="Hero photo from the Dublin intensive — a scenic or campus shot representing the trip"
-        className="aspect-video w-full rounded-[2.5rem]"
+      <CaptionedImage
+        src="/dublinHero.png"
+        alt="The Ireland with Mia travel blog's hero section, showing a dusky coastal harbor view with the site title and a 'food, pubs, daytrips, and activities' subtitle"
+        caption="The Ireland with Mia site's hero section"
+        width={2216}
+        height={944}
+        rounded="rounded-[2.5rem]"
       />
 
       <div className="flex flex-col gap-12 pt-14">
@@ -198,9 +238,13 @@ export default function DublinAccessibilityAuditPage() {
           </p>
 
           <div className="flex flex-col gap-6 sm:flex-row sm:items-stretch">
-            <ImagePlaceholder
-              alt="Photo from auditing the National History Museum of Ireland, or a general Dublin trip photo"
-              className="aspect-[4/3] w-full rounded-[2rem] shadow-lg shadow-olive/10 sm:w-1/2"
+            <CaptionedImage
+              src="/dublinMuseum.jpeg"
+              alt="A view down into the National History Museum of Ireland's second-floor gallery from an upper walkway"
+              caption="The second floor — reachable only by stairs, with no elevator"
+              width={1536}
+              height={2048}
+              className="sm:w-1/2"
             />
             <div className="flex flex-col items-start justify-center gap-2 rounded-3xl bg-sand-light px-6 py-5 shadow-inner shadow-olive/5 sm:w-1/2">
               <span className="font-serif text-5xl font-medium tracking-tight text-rust-text sm:text-6xl">
@@ -319,6 +363,14 @@ export default function DublinAccessibilityAuditPage() {
               </a>
             </div>
           </div>
+
+          <CaptionedImage
+            src="/dublinAudit.png"
+            alt="My coded HTML writeup of the museum accessibility audit, showing the National History Museum of Archaeology heading, a photo of the museum exterior, and a bulleted accessibility checklist"
+            caption="My coded writeup of the audit findings"
+            width={3346}
+            height={1148}
+          />
         </section>
 
         <section className="flex flex-col gap-4">
@@ -375,10 +427,28 @@ export default function DublinAccessibilityAuditPage() {
                     {guideline.description}
                   </p>
                 </div>
-                <ImagePlaceholder
-                  alt={guideline.photoAlt}
-                  className="aspect-video w-full rounded-[2rem] shadow-lg shadow-olive/10 sm:w-2/5"
-                />
+                {guideline.photos.length === 1 ? (
+                  <Image
+                    src={guideline.photos[0].src}
+                    alt={guideline.photos[0].alt}
+                    width={guideline.photos[0].width}
+                    height={guideline.photos[0].height}
+                    className="h-auto w-full rounded-[2rem] shadow-lg shadow-olive/10 sm:w-2/5"
+                  />
+                ) : (
+                  <div className="grid grid-cols-3 gap-2 sm:w-2/5">
+                    {guideline.photos.map((photo) => (
+                      <Image
+                        key={photo.src}
+                        src={photo.src}
+                        alt={photo.alt}
+                        width={photo.width}
+                        height={photo.height}
+                        className="h-auto w-full rounded-xl shadow-lg shadow-olive/10"
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -452,8 +522,6 @@ export default function DublinAccessibilityAuditPage() {
             and &ldquo;genuine commitment&rdquo; impossible to ignore.
           </p>
 
-          <ImagePlaceholder alt="Photo from touring Google's Dublin Accessibility Discovery Center or visiting the Irish Wheelchair Society" />
-
           <p className="leading-relaxed text-olive-soft">
             That shift followed me directly into my own code. Building my
             travel blog, I started testing decisions against a new question:
@@ -480,6 +548,35 @@ export default function DublinAccessibilityAuditPage() {
             afterthought. It&rsquo;s an essential part of creating
             thoughtful, inclusive experiences.
           </p>
+        </section>
+
+        <section className="flex flex-col gap-6">
+          <p className="text-center font-serif text-xl text-olive italic">
+            A few moments from three weeks in Dublin.
+          </p>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <CaptionedImage
+              src="/dublinGallery1.jpeg"
+              alt="Mia smiling in a green knit hat and rain jacket at the Cliffs of Moher, with the cliffs and ocean behind her"
+              caption="Bracing the wind at the Cliffs of Moher"
+              width={3024}
+              height={4032}
+            />
+            <CaptionedImage
+              src="/dublinGallery2.jpeg"
+              alt="A row of colorful Irish terrace houses in white, yellow, and mint green along a coastal street"
+              caption="Colorful terrace houses along the coast"
+              width={3024}
+              height={4032}
+            />
+            <CaptionedImage
+              src="/dublinGallery3.jpeg"
+              alt="The exterior of The Temple Bar pub in Dublin, strung with lights and surrounded by a crowd"
+              caption="The Temple Bar, Dublin's most iconic pub"
+              width={768}
+              height={1024}
+            />
+          </div>
         </section>
       </div>
 
