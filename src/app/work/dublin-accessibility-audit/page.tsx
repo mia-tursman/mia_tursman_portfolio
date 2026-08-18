@@ -412,11 +412,11 @@ export default function DublinAccessibilityAuditPage() {
             {guidelines.map((guideline, i) => (
               <div
                 key={guideline.code}
-                className={`flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8 ${
+                className={`flex flex-col gap-4 ${
                   i > 0 ? "border-t border-dashed border-olive/20 pt-10" : ""
                 }`}
               >
-                <div className="flex flex-1 flex-col gap-3">
+                <div className="flex flex-col gap-3">
                   <span className="inline-block w-fit rounded-full bg-lilac-tint px-2.5 py-1 text-xs font-medium text-olive">
                     {guideline.code}
                   </span>
@@ -433,10 +433,10 @@ export default function DublinAccessibilityAuditPage() {
                     alt={guideline.photos[0].alt}
                     width={guideline.photos[0].width}
                     height={guideline.photos[0].height}
-                    className="h-auto w-full rounded-[2rem] shadow-lg shadow-olive/10 sm:w-2/5"
+                    className="h-auto w-full rounded-[2rem] shadow-lg shadow-olive/10"
                   />
                 ) : (
-                  <div className="grid grid-cols-3 gap-2 sm:w-2/5">
+                  <div className="grid grid-cols-3 gap-3">
                     {guideline.photos.map((photo) => (
                       <Image
                         key={photo.src}
@@ -556,19 +556,25 @@ export default function DublinAccessibilityAuditPage() {
           </p>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             <CaptionedImage
-              src="/dublinGallery1.jpeg"
-              alt="Mia smiling in a green knit hat and rain jacket at the Cliffs of Moher, with the cliffs and ocean behind her"
-              caption="Bracing the wind at the Cliffs of Moher"
-              width={3024}
-              height={4032}
-            />
-            <CaptionedImage
               src="/dublinGallery2.jpeg"
               alt="A row of colorful Irish terrace houses in white, yellow, and mint green along a coastal street"
               caption="Colorful terrace houses along the coast"
               width={3024}
               height={4032}
             />
+            <figure className="flex flex-col gap-2">
+              <div className="relative aspect-[3/2] w-full overflow-hidden rounded-3xl shadow-lg shadow-olive/10">
+                <Image
+                  src="/dublinGallery1.jpeg"
+                  alt="Mia smiling in a green knit hat and rain jacket at the Cliffs of Moher, with the cliffs and ocean behind her"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="text-center text-xs font-medium tracking-wide text-olive-soft uppercase">
+                Bracing the wind at the Cliffs of Moher
+              </figcaption>
+            </figure>
             <CaptionedImage
               src="/dublinGallery3.jpeg"
               alt="The exterior of The Temple Bar pub in Dublin, strung with lights and surrounded by a crowd"
