@@ -562,19 +562,13 @@ export default function DublinAccessibilityAuditPage() {
               width={3024}
               height={4032}
             />
-            <figure className="flex flex-col gap-2">
-              <div className="relative aspect-[3/2] w-full overflow-hidden rounded-3xl shadow-lg shadow-olive/10">
-                <Image
-                  src="/dublinGallery1.jpeg"
-                  alt="Mia smiling in a green knit hat and rain jacket at the Cliffs of Moher, with the cliffs and ocean behind her"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <figcaption className="text-center text-xs font-medium tracking-wide text-olive-soft uppercase">
-                Bracing the wind at the Cliffs of Moher
-              </figcaption>
-            </figure>
+            <CaptionedImage
+              src="/dublinGallery1.jpeg"
+              alt="Mia smiling in a green knit hat and rain jacket at the Cliffs of Moher, with the cliffs and ocean behind her"
+              caption="Bracing the wind at the Cliffs of Moher"
+              width={3024}
+              height={4032}
+            />
             <CaptionedImage
               src="/dublinGallery3.jpeg"
               alt="The exterior of The Temple Bar pub in Dublin, strung with lights and surrounded by a crowd"
