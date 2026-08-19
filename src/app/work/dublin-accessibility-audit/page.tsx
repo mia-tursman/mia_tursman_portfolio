@@ -436,7 +436,7 @@ export default function DublinAccessibilityAuditPage() {
                     className="h-auto w-full rounded-[2rem] shadow-lg shadow-olive/10"
                   />
                 ) : (
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                     {guideline.photos.map((photo) => (
                       <Image
                         key={photo.src}
@@ -580,7 +580,7 @@ export default function DublinAccessibilityAuditPage() {
         </section>
       </div>
 
-      <div className="mt-20 flex items-center justify-between border-t border-dashed border-olive/20 pt-8">
+      <div className="mt-20 flex flex-col gap-3 border-t border-dashed border-olive/20 pt-8 sm:flex-row sm:items-center sm:justify-between">
         <Link
           href="/#work"
           className="text-sm font-medium text-rust-text transition-colors hover:text-rust-text-hover"

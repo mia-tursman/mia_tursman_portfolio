@@ -414,7 +414,10 @@ export default function TakanockIntakeHubPage() {
                   Assistant — Live Conversation
                 </span>
               </div>
-              <div className="h-[640px] overflow-y-auto overscroll-contain">
+              <div
+                className="h-[420px] overflow-y-auto overscroll-contain sm:h-[640px]"
+                style={{ WebkitOverflowScrolling: "touch" }}
+              >
                 <Image
                   src="/intakeWalkthrough1.jpeg"
                   alt="Screenshot of the Takanock Assistant chat: a user reporting they can't access their Slack account and providing their name and department to start a support ticket"
@@ -586,7 +589,7 @@ export default function TakanockIntakeHubPage() {
         </section>
       </div>
 
-      <div className="mt-20 flex items-center justify-between border-t border-dashed border-olive/20 pt-8">
+      <div className="mt-20 flex flex-col gap-3 border-t border-dashed border-olive/20 pt-8 sm:flex-row sm:items-center sm:justify-between">
         <Link
           href="/#work"
           className="text-sm font-medium text-rust-text transition-colors hover:text-rust-text-hover"
