@@ -212,7 +212,7 @@ export default function DublinAccessibilityAuditPage() {
 
         <section className="flex flex-col gap-4">
           <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
-            Field Research: Experiencing real-world accessibility
+            Field research: Experiencing real-world accessibility
           </h2>
           <p className="leading-relaxed text-olive-soft">
             Most afternoons throughout the three weeks were spent exploring
@@ -484,7 +484,7 @@ export default function DublinAccessibilityAuditPage() {
 
         <section className="flex flex-col gap-4">
           <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
-            What I Learned
+            What I learned
           </h2>
           <p className="leading-relaxed text-olive-soft">
             Before this course, I had never considered the importance of

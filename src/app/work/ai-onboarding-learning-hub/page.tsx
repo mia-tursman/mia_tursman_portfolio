@@ -142,7 +142,7 @@ export default function AiOnboardingLearningHubPage() {
 
         <section className="flex flex-col gap-4">
           <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
-            The Problem
+            The problem
           </h2>
           <p className="leading-relaxed text-olive-soft">
             Employees and new hires at Takanock were handed documents about
@@ -232,7 +232,7 @@ export default function AiOnboardingLearningHubPage() {
 
         <section className="flex flex-col gap-4">
           <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
-            Design Process
+            Design process
           </h2>
           <p className="leading-relaxed text-olive-soft">
             Given the short timeline for solving the AI implementation
@@ -360,7 +360,7 @@ export default function AiOnboardingLearningHubPage() {
 
         <section className="flex flex-col gap-4">
           <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
-            The Solution
+            The solution
           </h2>
           <p className="leading-relaxed text-olive-soft">
             I built a plain HTML/CSS/JS site structured as a step-by-step
@@ -372,7 +372,7 @@ export default function AiOnboardingLearningHubPage() {
 
         <section className="flex flex-col gap-8">
           <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
-            What I Learned
+            What I learned
           </h2>
           <p className="leading-relaxed text-olive-soft">
             A major takeaway I had throughout this process was the

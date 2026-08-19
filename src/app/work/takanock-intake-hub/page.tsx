@@ -149,7 +149,7 @@ export default function TakanockIntakeHubPage() {
 
         <section className="flex flex-col gap-4">
           <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
-            The Problem
+            The problem
           </h2>
           <p className="leading-relaxed text-olive-soft">
             There was no standard way to raise a request, track it, or know
@@ -310,7 +310,7 @@ export default function TakanockIntakeHubPage() {
 
         <section className="flex flex-col gap-4">
           <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
-            Design Process
+            Design process
           </h2>
           <p className="leading-relaxed text-olive-soft">
             From Claude skill, to standalone app, to unified hub; this
@@ -389,8 +389,8 @@ export default function TakanockIntakeHubPage() {
 
           <ul className={listClass}>
             <li className={liClass}>
-              <strong className="text-olive">Chat-based routing:</strong> The
-              Assistant tab lets someone describe their issue in plain
+              <strong className="text-olive">Chat-based routing:</strong>{" "}
+              The Assistant tab lets someone describe their issue in plain
               language rather than picking a category first. This mattered
               because the whole point of moving off Claude was accessibility;
               if people still had to correctly guess &ldquo;is this IT, GIS,
@@ -459,8 +459,8 @@ export default function TakanockIntakeHubPage() {
 
           <ul className={listClass}>
             <li className={liClass}>
-              <strong className="text-olive">Status checks:</strong> I added
-              the Check My Ticket feature specifically to create
+              <strong className="text-olive">Status checks:</strong>{" "}
+              I added the Check My Ticket feature specifically to create
               transparency between the person requesting help and the team
               fulfilling it. When discussing the idea with Jacob, we decided
               it would be helpful for individuals to receive a notification
@@ -521,7 +521,7 @@ export default function TakanockIntakeHubPage() {
 
         <section className="flex flex-col gap-4">
           <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
-            The Solution
+            The solution
           </h2>
           <p className="leading-relaxed text-olive-soft">
             The Takanock Intake Hub is a Next.js web app with three tabs: an
@@ -549,7 +549,7 @@ export default function TakanockIntakeHubPage() {
 
         <section className="flex flex-col gap-8">
           <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
-            What I Learned
+            What I learned
           </h2>
           <p className="leading-relaxed text-olive-soft">
             Working on the Intake Hub, I learned that our job isn&rsquo;t to
