@@ -36,17 +36,6 @@ export const projects: Project[] = [
     color: "bg-marigold",
   },
   {
-    slug: "ai-onboarding-learning-hub",
-    title: "AI Onboarding Learning Hub",
-    tagline:
-      "A guided, AI-assisted learning experience that walks new hires through Takanock's Claude tools.",
-    tags: ["Onboarding", "AI Learning", "UX"],
-    role: "UX Designer",
-    timeline: "2025 — 2026",
-    team: "1 designer, 3 engineers, 1 L&D partner",
-    color: "bg-olive",
-  },
-  {
     slug: "lasso-loop-photo-app",
     title: "Lasso Loop Photo-Contribution App",
     tagline:
@@ -56,6 +45,17 @@ export const projects: Project[] = [
     timeline: "Fall 2026 (in progress)",
     team: "Solo project for client Lasso Loop",
     color: "bg-rust",
+  },
+  {
+    slug: "ai-onboarding-learning-hub",
+    title: "AI Onboarding Learning Hub",
+    tagline:
+      "A guided, AI-assisted learning experience that walks new hires through Takanock's Claude tools.",
+    tags: ["Onboarding", "AI Learning", "UX"],
+    role: "UX Designer",
+    timeline: "2025 — 2026",
+    team: "1 designer, 3 engineers, 1 L&D partner",
+    color: "bg-olive",
   },
 ];
 
