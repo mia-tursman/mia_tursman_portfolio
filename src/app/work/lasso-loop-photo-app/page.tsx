@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { projects, getProject } from "@/lib/projects";
+import CaptionedImage from "@/components/CaptionedImage";
+import FigmaEmbed from "@/components/FigmaEmbed";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import TableOfContents, { type TocItem } from "@/components/TableOfContents";
 
@@ -132,6 +134,14 @@ export default function LassoLoopPhotoAppPage() {
             </p>
           </div>
 
+          <CaptionedImage
+            src="/lassoHero.webp"
+            alt="The first four screens of the Lasso app: a yellow home screen with the Lasso logo and a Photograph a container button, a camera screen with a framing guide around a water bottle, a photo review screen with Confirm Photo and Retake buttons, and a Choose a material screen with Plastic PET selected"
+            caption="Home, camera, review, and material selection"
+            width={2000}
+            height={990}
+            className="mt-10"
+          />
           <div className="flex flex-col gap-12 pt-14">
             <section id="overview" className="flex scroll-mt-24 flex-col gap-4">
               <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
@@ -226,10 +236,24 @@ export default function LassoLoopPhotoAppPage() {
                   them one at a time, and a material-first flow where users
                   choose the material before the camera opens.
                 </p>
-                <ImagePlaceholder
-                  alt="Early wireframes for three capture concepts: a guided single photo with voice and haptic help, a pile mode for several containers, and a material-first flow"
-                  caption="Early wireframes: three capture concepts"
-                />
+                <div className="grid grid-cols-1 items-start gap-8 sm:grid-cols-2">
+                  <CaptionedImage
+                    src="/lassoSketches.webp"
+                    alt="Hand-drawn phone sketches for scanning a container, choosing the correct material, a material info screen, a Did you know education screen, a thank-you screen, editing past entries, personal impact stats, and network statistics, annotated with notes"
+                    caption="Early sketches"
+                    width={1188}
+                    height={1870}
+                    href="/lassoSketches.webp"
+                  />
+                  <CaptionedImage
+                    src="/lassoTaskFlow.webp"
+                    alt="A sketched task flow for submitting a contribution, with arrows connecting the home page, scan container, review, choose material, info pop-up, submitting, thank-you, and daily fact screens"
+                    caption="Task flow for submitting a contribution"
+                    width={1972}
+                    height={1798}
+                    href="/lassoTaskFlow.webp"
+                  />
+                </div>
               </div>
 
               <div className="flex flex-col gap-4">
@@ -245,6 +269,13 @@ export default function LassoLoopPhotoAppPage() {
                   character the client never asked for. The short, friendly
                   speech-bubble messages stayed, so the voice carried over.
                 </p>
+                <CaptionedImage
+                  src="/lassoMascotVersion.png"
+                  alt="An earlier grayscale version of the scan, review, and material screens, each with a small robot mascot giving instructions in a speech bubble"
+                  caption="Earlier version with the robot mascot"
+                  width={1476}
+                  height={1048}
+                />
               </div>
 
               <div className="flex flex-col gap-4">
@@ -262,10 +293,13 @@ export default function LassoLoopPhotoAppPage() {
                   many containers have no usable barcode, and it relied on a
                   product database the brief never mentions.
                 </p>
-                <ImagePlaceholder
-                  alt="All 15 frames of the final mobile flow laid out left to right, from the home screen through camera, photo review, material selection, confirmation, thank-you, and My Contributions"
-                  caption="The full 15-frame flow"
-                  className="aspect-[3/1] w-full"
+                <CaptionedImage
+                  src="/lassoFlowMap.png"
+                  alt="Part of the Figma prototype map, with arrows connecting the home screen to the camera, photo review, and material screens, plus the Learn about recycling screen, the Edit Material screen, and the We couldn't use that photo error screen"
+                  caption="Part of the prototype flow in Figma"
+                  width={1664}
+                  height={1872}
+                  href="/lassoFlowMap.png"
                 />
               </div>
 
@@ -311,9 +345,13 @@ export default function LassoLoopPhotoAppPage() {
                   container from the outside in, and test by dragging a frame
                   wider and narrower.
                 </p>
-                <ImagePlaceholder
-                  alt="The Figma component library: button, header, navigation bar, material card, and contribution row, each built with Auto Layout"
+                <CaptionedImage
+                  src="/lassoComponents.png"
+                  alt="The Figma component board: header variants with the Lasso logo, primary and secondary buttons, Learn more buttons, the bottom navigation bar, an icon set, material cards in default and selected states, and radio rows for editing a material"
                   caption="Reusable component library"
+                  width={1866}
+                  height={1754}
+                  href="/lassoComponents.png"
                 />
               </div>
             </section>
@@ -346,6 +384,16 @@ export default function LassoLoopPhotoAppPage() {
                 and deleting asks for confirmation with &ldquo;Keep photo&rdquo;
                 as the main button.
               </p>
+              <p className="leading-relaxed text-olive-soft">
+                You can explore the full Figma file below. Drag to pan, and
+                scroll or pinch to zoom.
+              </p>
+              <FigmaEmbed
+                src="https://embed.figma.com/design/RHYxlkSr6HM6N1kqvbSeNF/SI-307--Assignment-4-Mia-Tursman--Copy-?node-id=0-1&embed-host=share"
+                title="Interactive Figma file for the Lasso photo-contribution app, showing all screens, the flow between them, and the component library"
+                caption="The Figma file"
+                openUrl="https://www.figma.com/design/RHYxlkSr6HM6N1kqvbSeNF/SI-307--Assignment-4-Mia-Tursman--Copy-?node-id=0-1"
+              />
             </section>
 
             <section id="learned" className="flex scroll-mt-24 flex-col gap-8">
