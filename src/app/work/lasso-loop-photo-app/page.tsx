@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { projects, getProject } from "@/lib/projects";
 import CaptionedImage from "@/components/CaptionedImage";
 import FigmaEmbed from "@/components/FigmaEmbed";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import TableOfContents, { type TocItem } from "@/components/TableOfContents";
 
 const project = getProject("lasso-loop-photo-app")!;
@@ -209,11 +208,6 @@ export default function LassoLoopPhotoAppPage() {
                 low-pressure, while Jennifer kept me focused on teaching without
                 getting in the way.
               </p>
-
-              <ImagePlaceholder
-                alt="Persona cards for Jennifer, the primary user, and Rob, the skeptical secondary user, showing each one's background, goals, and frustrations"
-                caption="Personas: Jennifer and Rob"
-              />
             </section>
 
             <section
@@ -294,14 +288,6 @@ export default function LassoLoopPhotoAppPage() {
                   many containers have no usable barcode, and it relied on a
                   product database the brief never mentions.
                 </p>
-                <CaptionedImage
-                  src="/lassoFlowMap.png"
-                  alt="Part of the Figma prototype map, with arrows connecting the home screen to the camera, photo review, and material screens, plus the Learn about recycling screen, the Edit Material screen, and the We couldn't use that photo error screen"
-                  caption="Part of the prototype flow in Figma"
-                  width={1664}
-                  height={1872}
-                  href="/lassoFlowMap.png"
-                />
               </div>
 
               <div className="flex flex-col gap-4">
@@ -328,9 +314,13 @@ export default function LassoLoopPhotoAppPage() {
                   Both use an icon and words, not color alone, and neither
                   blames the user.
                 </p>
-                <ImagePlaceholder
-                  alt="Two error screens side by side: a rejected blurry photo with a banner suggesting more light and a Retake photo button, and a failed upload explaining the photo is saved on the phone with a Try again button"
-                  caption="Non-happy states: photo not accepted and upload failed"
+                <CaptionedImage
+                  src="/lassoErrorStates.png"
+                  alt="Two error screens side by side. Left: Your photo didn't upload, with a crossed-out Wi-Fi icon, a warning banner saying the photo is saved on the phone and to check the connection, and a Try again button. Right: We couldn't use that photo, showing a blurry bottle with a warning banner saying to try more light and hold steady, and a Retake photo button. Both screens have a Cancel link."
+                  caption="Non-happy states: upload failed and photo not accepted"
+                  width={1332}
+                  height={1354}
+                  href="/lassoErrorStates.png"
                 />
               </div>
 
