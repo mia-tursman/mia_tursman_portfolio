@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { projects, getProject } from "@/lib/projects";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import CaptionedImage from "@/components/CaptionedImage";
+import FigmaEmbed from "@/components/FigmaEmbed";
 import TableOfContents, { type TocItem } from "@/components/TableOfContents";
 
 const project = getProject("lasso-loop-photo-app")!;
@@ -22,8 +23,9 @@ const toc: TocItem[] = [
   { id: "overview", label: "Overview" },
   { id: "personas", label: "Users and personas" },
   { id: "design-process", label: "Design process" },
-  { id: "solution", label: "Solution" },
-  { id: "learned", label: "What I learned" },
+  { id: "current-design", label: "Where the design is now" },
+  { id: "learned", label: "What I've learned so far" },
+  { id: "next-steps", label: "Open questions and next steps" },
 ];
 
 const details = [
@@ -132,6 +134,14 @@ export default function LassoLoopPhotoAppPage() {
             </p>
           </div>
 
+          <CaptionedImage
+            src="/lassoHero.webp"
+            alt="The first four screens of the Lasso app: a yellow home screen with the Lasso logo and a Photograph a container button, a camera screen with a framing guide around a water bottle, a photo review screen with Confirm Photo and Retake buttons, and a Choose a material screen with Plastic PET selected"
+            caption="Home, camera, review, and material selection"
+            width={2000}
+            height={990}
+            className="mt-10"
+          />
           <div className="flex flex-col gap-12 pt-14">
             <section id="overview" className="flex scroll-mt-24 flex-col gap-4">
               <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
@@ -198,11 +208,6 @@ export default function LassoLoopPhotoAppPage() {
                 low-pressure, while Jennifer kept me focused on teaching without
                 getting in the way.
               </p>
-
-              <ImagePlaceholder
-                alt="Persona cards for Jennifer, the primary user, and Rob, the skeptical secondary user, showing each one's background, goals, and frustrations"
-                caption="Personas: Jennifer and Rob"
-              />
             </section>
 
             <section
@@ -226,10 +231,24 @@ export default function LassoLoopPhotoAppPage() {
                   them one at a time, and a material-first flow where users
                   choose the material before the camera opens.
                 </p>
-                <ImagePlaceholder
-                  alt="Early wireframes for three capture concepts: a guided single photo with voice and haptic help, a pile mode for several containers, and a material-first flow"
-                  caption="Early wireframes: three capture concepts"
-                />
+                <div className="grid grid-cols-1 items-start gap-8 sm:grid-cols-2">
+                  <CaptionedImage
+                    src="/lassoSketches.webp"
+                    alt="Hand-drawn phone sketches for scanning a container, choosing the correct material, a material info screen, a Did you know education screen, a thank-you screen, editing past entries, personal impact stats, and network statistics, annotated with notes"
+                    caption="Early sketches"
+                    width={1188}
+                    height={1870}
+                    href="/lassoSketches.webp"
+                  />
+                  <CaptionedImage
+                    src="/lassoTaskFlow.webp"
+                    alt="A sketched task flow for submitting a contribution, with arrows connecting the home page, scan container, review, choose material, info pop-up, submitting, thank-you, and daily fact screens"
+                    caption="Task flow for submitting a contribution"
+                    width={1972}
+                    height={1798}
+                    href="/lassoTaskFlow.webp"
+                  />
+                </div>
               </div>
 
               <div className="flex flex-col gap-4">
@@ -238,13 +257,20 @@ export default function LassoLoopPhotoAppPage() {
                   In the PRD stage, the app featured a friendly robot mascot
                   named &ldquo;Lasso&rdquo; (&ldquo;Hey, I&rsquo;m
                   Lasso!&rdquo;) in onboarding and feedback screens. In the
-                  final flow, I replaced the mascot with the client&rsquo;s own
+                  current flow, I replaced the mascot with the client&rsquo;s own
                   Lasso logo in the header so the design stayed faithful to the
                   brand. I wasn&rsquo;t happy with how the generated robot
                   looked, and using the client&rsquo;s logo avoided inventing a
                   character the client never asked for. The short, friendly
                   speech-bubble messages stayed, so the voice carried over.
                 </p>
+                <CaptionedImage
+                  src="/lassoMascotVersion.png"
+                  alt="An earlier grayscale version of the scan, review, and material screens, each with a small robot mascot giving instructions in a speech bubble"
+                  caption="Earlier version with the robot mascot"
+                  width={1476}
+                  height={1048}
+                />
               </div>
 
               <div className="flex flex-col gap-4">
@@ -252,7 +278,7 @@ export default function LassoLoopPhotoAppPage() {
                 <p className="leading-relaxed text-olive-soft">
                   For Assignment 4, I took one wireframe idea and built it into
                   a 15-frame colored flow using Figma Design, Auto Layout, and
-                  5+ reusable components. The final flow has the user
+                  5+ reusable components. The flow as it stands has the user
                   photograph the item, then self-identify the material.
                 </p>
                 <p className="leading-relaxed text-olive-soft">
@@ -262,11 +288,6 @@ export default function LassoLoopPhotoAppPage() {
                   many containers have no usable barcode, and it relied on a
                   product database the brief never mentions.
                 </p>
-                <ImagePlaceholder
-                  alt="All 15 frames of the final mobile flow laid out left to right, from the home screen through camera, photo review, material selection, confirmation, thank-you, and My Contributions"
-                  caption="The full 15-frame flow"
-                  className="aspect-[3/1] w-full"
-                />
               </div>
 
               <div className="flex flex-col gap-4">
@@ -293,9 +314,13 @@ export default function LassoLoopPhotoAppPage() {
                   Both use an icon and words, not color alone, and neither
                   blames the user.
                 </p>
-                <ImagePlaceholder
-                  alt="Two error screens side by side: a rejected blurry photo with a banner suggesting more light and a Retake photo button, and a failed upload explaining the photo is saved on the phone with a Try again button"
-                  caption="Non-happy states: photo not accepted and upload failed"
+                <CaptionedImage
+                  src="/lassoErrorStates.png"
+                  alt="Two error screens side by side. Left: Your photo didn't upload, with a crossed-out Wi-Fi icon, a warning banner saying the photo is saved on the phone and to check the connection, and a Try again button. Right: We couldn't use that photo, showing a blurry bottle with a warning banner saying to try more light and hold steady, and a Retake photo button. Both screens have a Cancel link."
+                  caption="Non-happy states: upload failed and photo not accepted"
+                  width={1332}
+                  height={1354}
+                  href="/lassoErrorStates.png"
                 />
               </div>
 
@@ -311,17 +336,29 @@ export default function LassoLoopPhotoAppPage() {
                   container from the outside in, and test by dragging a frame
                   wider and narrower.
                 </p>
-                <ImagePlaceholder
-                  alt="The Figma component library: button, header, navigation bar, material card, and contribution row, each built with Auto Layout"
+                <CaptionedImage
+                  src="/lassoComponents.png"
+                  alt="The Figma component board: header variants with the Lasso logo, primary and secondary buttons, Learn more buttons, the bottom navigation bar, an icon set, material cards in default and selected states, and radio rows for editing a material"
                   caption="Reusable component library"
+                  width={1866}
+                  height={1754}
+                  href="/lassoComponents.png"
                 />
               </div>
             </section>
 
-            <section id="solution" className="flex scroll-mt-24 flex-col gap-4">
+            <section
+              id="current-design"
+              className="flex scroll-mt-24 flex-col gap-4"
+            >
               <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
-                Solution
+                Where the design is now
               </h2>
+              <p className="leading-relaxed text-olive-soft">
+                This is the first walkthrough for 15 stages of the flow, not a
+                finished solution. It shows the direction I&rsquo;ve chosen and
+                the decisions I&rsquo;m still testing for future iterations.
+              </p>
               <p className="leading-relaxed text-olive-soft">
                 A user opens the app on a home screen that explains in one line
                 what it does and offers one clear action, &ldquo;Photograph a
@@ -344,33 +381,74 @@ export default function LassoLoopPhotoAppPage() {
                 a &ldquo;Did you know?&rdquo; fact. My Contributions lets them
                 review past photos, edit a material, or delete a contribution,
                 and deleting asks for confirmation with &ldquo;Keep photo&rdquo;
-                as the main button.
+                as the main button. I expect parts of this to change once I can
+                put it in front of users.
               </p>
+              <p className="leading-relaxed text-olive-soft">
+                You can explore the full Figma file below. Drag to pan, and
+                scroll or pinch to zoom.
+              </p>
+              <FigmaEmbed
+                src="https://embed.figma.com/design/RHYxlkSr6HM6N1kqvbSeNF/SI-307--Assignment-4-Mia-Tursman--Copy-?node-id=0-1&embed-host=share"
+                title="Interactive Figma file for the Lasso photo-contribution app, showing all screens, the flow between them, and the component library"
+                caption="The Figma file"
+                openUrl="https://www.figma.com/design/RHYxlkSr6HM6N1kqvbSeNF/SI-307--Assignment-4-Mia-Tursman--Copy-?node-id=0-1"
+              />
             </section>
 
             <section id="learned" className="flex scroll-mt-24 flex-col gap-8">
               <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
-                What I learned
+                What I&rsquo;ve learned so far
               </h2>
               <p className="leading-relaxed text-olive-soft">
-                Designing for Rob taught me that a skeptical user judges an app
-                by how much it asks of them. Cutting the barcode step, keeping
-                to one photo, and making &ldquo;I&rsquo;m not sure&rdquo; a
-                normal answer all came from asking what Rob would do when the
-                app felt like work. I also learned that error states are part of
-                the core experience: a user who hits a failed upload decides
-                whether to trust the app, so what the screen says matters as
-                much as the happy path.
+                Designing for the persona Rob has led most of my decisions so
+                far. A skeptical user judges an app by how much it asks of them,
+                so I cut out the barcode step I originally considered, kept the
+                flow to one photo, and made &ldquo;Unknown/other&rdquo; a
+                possible answer for users unsure of what to choose. I&rsquo;ve
+                also learned to design error states to be part of the
+                experience: someone who hits a failed upload decides whether to
+                trust the app, so what that screen says matters as much as the
+                happy path.
               </p>
               <p className="leading-relaxed text-olive-soft">
-                Rebuilding the generated Figma frames by hand was slower than I
-                expected, but it taught me how Auto Layout and components work.
-                Generated output looks finished, and it falls apart when you
-                resize it. Building the button, header, navigation bar, material
-                card, and contribution row once and reusing them made the rest
-                of the file much easier to keep consistent. This design has not
-                been tested with users yet, and that is the next thing I would
-                do.
+                Rebuilding the generated frames by hand showed me the gap
+                between output that looks finished and a file that actually
+                works. The initial frames generated with Figma Make fell apart
+                when I resized them, so I built the shared components first
+                (button, header, navigation bar, material card, and contribution
+                row) and converted every item to the correct Auto Layout format
+                by hand. It is clear that AI tools cannot recreate the same
+                formats and styles that humans can, so I have learned it is
+                necessary that I understand how to use Figma tools and design
+                principles.
+              </p>
+            </section>
+
+            <section
+              id="next-steps"
+              className="flex scroll-mt-24 flex-col gap-8"
+            >
+              <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
+                Open questions and next steps
+              </h2>
+              <p className="leading-relaxed text-olive-soft">
+                This design hasn&rsquo;t been tested with users, so the biggest
+                open question is whether choosing a material from photos and
+                short descriptions actually helps people decide correctly. Other
+                questions I&rsquo;m still working through: whether the voice
+                guidance (shown as a control, not built) is worth building for
+                accessibility standards, whether the &ldquo;Did you know?&rdquo;
+                and recyclability messages teach anything or just add steps, and
+                whether there is any friction throughout the flow.
+              </p>
+              <p className="leading-relaxed text-olive-soft">
+                Next, I plan to iterate new designs in Figma until I reach a
+                final fully designed flow for the app. Currently, there are only
+                15 screens; by the end of the semester I will have every
+                possible screen for the application designed. The final step is
+                to create a slide deck walking through my design process and
+                presenting the final files to the stakeholder, Lasso Loop.
               </p>
             </section>
           </div>

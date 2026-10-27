@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/lib/projects";
 
@@ -9,10 +10,30 @@ export default function ProjectCard({ project }: { project: Project }) {
       href={`/work/${project.slug}`}
       className="group flex h-full flex-col overflow-hidden rounded-[2rem] bg-sand-light shadow-lg shadow-olive/10 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-lilac/25"
     >
-      <div className="h-40 w-full shrink-0 overflow-hidden">
-        <div
-          className={`h-full w-full transition-transform duration-300 group-hover:scale-105 ${project.color}`}
+      <div
+        className={`relative h-40 w-full shrink-0 overflow-hidden ${project.color}`}
+      >
+        {/* Decorative: the card's title already names the project. */}
+        <Image
+          src={project.image}
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 33vw, 100vw"
+          className={`transition-transform duration-300 group-hover:scale-105 ${
+            project.imageFit === "contain"
+              ? "object-contain"
+              : "object-cover object-top"
+          }`}
         />
+        {project.inProgress && (
+          <span className="absolute top-3 left-3 flex items-center gap-1.5 rounded-full bg-sand-light px-2.5 py-1 text-xs font-medium text-rust-text shadow-md shadow-olive/20">
+            <span
+              aria-hidden="true"
+              className="h-1.5 w-1.5 rounded-full bg-rust-text"
+            />
+            In progress
+          </span>
+        )}
       </div>
       <div className="flex flex-1 flex-col gap-3 p-6">
         <h3 className="font-serif text-lg font-semibold tracking-tight text-olive">
