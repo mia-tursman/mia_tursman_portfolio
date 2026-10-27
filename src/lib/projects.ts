@@ -46,6 +46,17 @@ export const projects: Project[] = [
     team: "1 designer, 3 engineers, 1 L&D partner",
     color: "bg-olive",
   },
+  {
+    slug: "lasso-loop-photo-app",
+    title: "Lasso Loop Photo-Contribution App",
+    tagline:
+      "A mobile flow that helps people recycle correctly while contributing photos to train Lasso's AI.",
+    tags: ["Mobile UX", "Figma Prototype", "Class Project"],
+    role: "Solo UX Design Student",
+    timeline: "Fall 2026 (in progress)",
+    team: "Solo project for client Lasso Loop",
+    color: "bg-rust",
+  },
 ];
 
 export function getProject(slug: string) {
