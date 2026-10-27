@@ -7,6 +7,8 @@ export type Project = {
   timeline: string;
   team: string;
   color: string;
+  // Shown on the project card; use the case study's hero image.
+  image: string;
 };
 
 // Every project has its own bespoke page under src/app/work/<slug>/page.tsx.
@@ -23,6 +25,7 @@ export const projects: Project[] = [
     timeline: "Summer 2026",
     team: "Independent build, in partnership with IT and GIS stakeholders",
     color: "bg-lilac",
+    image: "/intakeHome.jpeg",
   },
   {
     slug: "dublin-accessibility-audit",
@@ -34,6 +37,7 @@ export const projects: Project[] = [
     timeline: "2025",
     team: "Independent audit, in partnership with local advocacy group",
     color: "bg-marigold",
+    image: "/dublinHero.png",
   },
   {
     slug: "lasso-loop-photo-app",
@@ -45,6 +49,7 @@ export const projects: Project[] = [
     timeline: "Fall 2026 (in progress)",
     team: "Solo project for client Lasso Loop",
     color: "bg-rust",
+    image: "/lassoHero.webp",
   },
   {
     slug: "ai-onboarding-learning-hub",
@@ -56,6 +61,7 @@ export const projects: Project[] = [
     timeline: "2025 — 2026",
     team: "1 designer, 3 engineers, 1 L&D partner",
     color: "bg-olive",
+    image: "/learningHubHero.jpeg",
   },
 ];
 

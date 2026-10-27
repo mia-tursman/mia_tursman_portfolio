@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/lib/projects";
 
@@ -9,9 +10,16 @@ export default function ProjectCard({ project }: { project: Project }) {
       href={`/work/${project.slug}`}
       className="group flex h-full flex-col overflow-hidden rounded-[2rem] bg-sand-light shadow-lg shadow-olive/10 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-lilac/25"
     >
-      <div className="h-40 w-full shrink-0 overflow-hidden">
-        <div
-          className={`h-full w-full transition-transform duration-300 group-hover:scale-105 ${project.color}`}
+      <div
+        className={`relative h-40 w-full shrink-0 overflow-hidden ${project.color}`}
+      >
+        {/* Decorative: the card's title already names the project. */}
+        <Image
+          src={project.image}
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 33vw, 100vw"
+          className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
         />
       </div>
       <div className="flex flex-1 flex-col gap-3 p-6">
