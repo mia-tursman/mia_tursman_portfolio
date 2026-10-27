@@ -75,7 +75,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${workSans.variable} ${caveat.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${workSans.variable} ${caveat.variable} h-full scroll-smooth antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <SkipLink />

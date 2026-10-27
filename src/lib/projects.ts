@@ -36,6 +36,17 @@ export const projects: Project[] = [
     color: "bg-marigold",
   },
   {
+    slug: "lasso-loop-photo-app",
+    title: "Lasso Loop Photo-Contribution App",
+    tagline:
+      "A mobile flow that helps people recycle correctly while contributing photos to train Lasso's AI.",
+    tags: ["Mobile UX", "Figma Prototype", "Class Project"],
+    role: "Solo UX Design Student",
+    timeline: "Fall 2026 (in progress)",
+    team: "Solo project for client Lasso Loop",
+    color: "bg-rust",
+  },
+  {
     slug: "ai-onboarding-learning-hub",
     title: "AI Onboarding Learning Hub",
     tagline:
