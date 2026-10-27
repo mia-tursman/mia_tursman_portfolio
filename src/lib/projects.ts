@@ -9,12 +9,29 @@ export type Project = {
   color: string;
   // Shown on the project card; use the case study's hero image.
   image: string;
+  // "contain" shows the whole image (e.g. a logo) on the card's color
+  // instead of cropping it to fill the space.
+  imageFit?: "cover" | "contain";
+  inProgress?: boolean;
 };
 
 // Every project has its own bespoke page under src/app/work/<slug>/page.tsx.
 // Add a new page there (following an existing one as a template) when adding
 // a project here.
 export const projects: Project[] = [
+  {
+    slug: "lasso-loop-photo-app",
+    title: "Lasso Loop Photo-Contribution App",
+    tagline:
+      "A mobile flow that helps people recycle correctly while contributing photos to train Lasso's AI.",
+    tags: ["Mobile UX", "Figma Prototype", "Class Project"],
+    role: "Solo UX Design Student",
+    timeline: "Fall 2026 (in progress)",
+    team: "Solo project for client Lasso Loop",
+    color: "bg-rust",
+    image: "/lassoHero.webp",
+    inProgress: true,
+  },
   {
     slug: "takanock-intake-hub",
     title: "Takanock Intake Hub",
@@ -24,8 +41,9 @@ export const projects: Project[] = [
     role: "UX Design, Research, Front-end Development, Workflow Design",
     timeline: "Summer 2026",
     team: "Independent build, in partnership with IT and GIS stakeholders",
-    color: "bg-lilac",
-    image: "/intakeHome.jpeg",
+    color: "bg-[#0b2351]",
+    image: "/takanockLogo.jpg",
+    imageFit: "contain",
   },
   {
     slug: "dublin-accessibility-audit",
@@ -38,18 +56,6 @@ export const projects: Project[] = [
     team: "Independent audit, in partnership with local advocacy group",
     color: "bg-marigold",
     image: "/dublinHero.png",
-  },
-  {
-    slug: "lasso-loop-photo-app",
-    title: "Lasso Loop Photo-Contribution App",
-    tagline:
-      "A mobile flow that helps people recycle correctly while contributing photos to train Lasso's AI.",
-    tags: ["Mobile UX", "Figma Prototype", "Class Project"],
-    role: "Solo UX Design Student",
-    timeline: "Fall 2026 (in progress)",
-    team: "Solo project for client Lasso Loop",
-    color: "bg-rust",
-    image: "/lassoHero.webp",
   },
   {
     slug: "ai-onboarding-learning-hub",

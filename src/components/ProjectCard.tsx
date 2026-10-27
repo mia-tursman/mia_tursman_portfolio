@@ -19,8 +19,21 @@ export default function ProjectCard({ project }: { project: Project }) {
           alt=""
           fill
           sizes="(min-width: 1024px) 33vw, 100vw"
-          className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+          className={`transition-transform duration-300 group-hover:scale-105 ${
+            project.imageFit === "contain"
+              ? "object-contain"
+              : "object-cover object-top"
+          }`}
         />
+        {project.inProgress && (
+          <span className="absolute top-3 left-3 flex items-center gap-1.5 rounded-full bg-sand-light px-2.5 py-1 text-xs font-medium text-rust-text shadow-md shadow-olive/20">
+            <span
+              aria-hidden="true"
+              className="h-1.5 w-1.5 rounded-full bg-rust-text"
+            />
+            In progress
+          </span>
+        )}
       </div>
       <div className="flex flex-1 flex-col gap-3 p-6">
         <h3 className="font-serif text-lg font-semibold tracking-tight text-olive">
