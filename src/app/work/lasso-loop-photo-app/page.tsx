@@ -24,8 +24,9 @@ const toc: TocItem[] = [
   { id: "overview", label: "Overview" },
   { id: "personas", label: "Users and personas" },
   { id: "design-process", label: "Design process" },
-  { id: "solution", label: "Solution" },
-  { id: "learned", label: "What I learned" },
+  { id: "current-design", label: "Where the design is now" },
+  { id: "learned", label: "What I've learned so far" },
+  { id: "next-steps", label: "Open questions and next steps" },
 ];
 
 const details = [
@@ -262,7 +263,7 @@ export default function LassoLoopPhotoAppPage() {
                   In the PRD stage, the app featured a friendly robot mascot
                   named &ldquo;Lasso&rdquo; (&ldquo;Hey, I&rsquo;m
                   Lasso!&rdquo;) in onboarding and feedback screens. In the
-                  final flow, I replaced the mascot with the client&rsquo;s own
+                  current flow, I replaced the mascot with the client&rsquo;s own
                   Lasso logo in the header so the design stayed faithful to the
                   brand. I wasn&rsquo;t happy with how the generated robot
                   looked, and using the client&rsquo;s logo avoided inventing a
@@ -283,7 +284,7 @@ export default function LassoLoopPhotoAppPage() {
                 <p className="leading-relaxed text-olive-soft">
                   For Assignment 4, I took one wireframe idea and built it into
                   a 15-frame colored flow using Figma Design, Auto Layout, and
-                  5+ reusable components. The final flow has the user
+                  5+ reusable components. The flow as it stands has the user
                   photograph the item, then self-identify the material.
                 </p>
                 <p className="leading-relaxed text-olive-soft">
@@ -356,10 +357,18 @@ export default function LassoLoopPhotoAppPage() {
               </div>
             </section>
 
-            <section id="solution" className="flex scroll-mt-24 flex-col gap-4">
+            <section
+              id="current-design"
+              className="flex scroll-mt-24 flex-col gap-4"
+            >
               <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
-                Solution
+                Where the design is now
               </h2>
+              <p className="leading-relaxed text-olive-soft">
+                This is the first walkthrough for 15 stages of the flow, not a
+                finished solution. It shows the direction I&rsquo;ve chosen and
+                the decisions I&rsquo;m still testing for future iterations.
+              </p>
               <p className="leading-relaxed text-olive-soft">
                 A user opens the app on a home screen that explains in one line
                 what it does and offers one clear action, &ldquo;Photograph a
@@ -382,7 +391,8 @@ export default function LassoLoopPhotoAppPage() {
                 a &ldquo;Did you know?&rdquo; fact. My Contributions lets them
                 review past photos, edit a material, or delete a contribution,
                 and deleting asks for confirmation with &ldquo;Keep photo&rdquo;
-                as the main button.
+                as the main button. I expect parts of this to change once I can
+                put it in front of users.
               </p>
               <p className="leading-relaxed text-olive-soft">
                 You can explore the full Figma file below. Drag to pan, and
@@ -398,27 +408,57 @@ export default function LassoLoopPhotoAppPage() {
 
             <section id="learned" className="flex scroll-mt-24 flex-col gap-8">
               <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
-                What I learned
+                What I&rsquo;ve learned so far
               </h2>
               <p className="leading-relaxed text-olive-soft">
-                Designing for Rob taught me that a skeptical user judges an app
-                by how much it asks of them. Cutting the barcode step, keeping
-                to one photo, and making &ldquo;I&rsquo;m not sure&rdquo; a
-                normal answer all came from asking what Rob would do when the
-                app felt like work. I also learned that error states are part of
-                the core experience: a user who hits a failed upload decides
-                whether to trust the app, so what the screen says matters as
-                much as the happy path.
+                Designing for the persona Rob has led most of my decisions so
+                far. A skeptical user judges an app by how much it asks of them,
+                so I cut out the barcode step I originally considered, kept the
+                flow to one photo, and made &ldquo;Unknown/other&rdquo; a
+                possible answer for users unsure of what to choose. I&rsquo;ve
+                also learned to design error states to be part of the
+                experience: someone who hits a failed upload decides whether to
+                trust the app, so what that screen says matters as much as the
+                happy path.
               </p>
               <p className="leading-relaxed text-olive-soft">
-                Rebuilding the generated Figma frames by hand was slower than I
-                expected, but it taught me how Auto Layout and components work.
-                Generated output looks finished, and it falls apart when you
-                resize it. Building the button, header, navigation bar, material
-                card, and contribution row once and reusing them made the rest
-                of the file much easier to keep consistent. This design has not
-                been tested with users yet, and that is the next thing I would
-                do.
+                Rebuilding the generated frames by hand showed me the gap
+                between output that looks finished and a file that actually
+                works. The initial frames generated with Figma Make fell apart
+                when I resized them, so I built the shared components first
+                (button, header, navigation bar, material card, and contribution
+                row) and converted every item to the correct Auto Layout format
+                by hand. It is clear that AI tools cannot recreate the same
+                formats and styles that humans can, so I have learned it is
+                necessary that I understand how to use Figma tools and design
+                principles.
+              </p>
+            </section>
+
+            <section
+              id="next-steps"
+              className="flex scroll-mt-24 flex-col gap-8"
+            >
+              <h2 className="font-serif text-2xl font-medium tracking-tight text-olive">
+                Open questions and next steps
+              </h2>
+              <p className="leading-relaxed text-olive-soft">
+                This design hasn&rsquo;t been tested with users, so the biggest
+                open question is whether choosing a material from photos and
+                short descriptions actually helps people decide correctly. Other
+                questions I&rsquo;m still working through: whether the voice
+                guidance (shown as a control, not built) is worth building for
+                accessibility standards, whether the &ldquo;Did you know?&rdquo;
+                and recyclability messages teach anything or just add steps, and
+                whether there is any friction throughout the flow.
+              </p>
+              <p className="leading-relaxed text-olive-soft">
+                Next, I plan to iterate new designs in Figma until I reach a
+                final fully designed flow for the app. Currently, there are only
+                15 screens; by the end of the semester I will have every
+                possible screen for the application designed. The final step is
+                to create a slide deck walking through my design process and
+                presenting the final files to the stakeholder, Lasso Loop.
               </p>
             </section>
           </div>
