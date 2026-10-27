@@ -25,12 +25,11 @@ export default function Home() {
           {contact.name}
         </h1>
         <p className="max-w-2xl text-lg leading-relaxed text-olive-soft">
-          I am a junior at the University of Michigan School of Information,
-          obtaining a Bachelor of Science in Information with a concentration
-          in User Experience Design. I am also receiving dual minors in
-          Quantitative Methods for Social Science and Environmental Studies.
-          I focus on accessible UX in the real world, AI-assisted workflows,
-          non-profit UX research, and much more!
+          I&rsquo;m a junior at the University of Michigan School of
+          Information, studying User Experience Design with minors in
+          Quantitative Methods in Social Science and Environmental Studies. I
+          focus on UX design and research, AI-assisted workflows, and
+          intuitive, accessible design.
         </p>
       </section>
 
